@@ -1,0 +1,14 @@
+from django.forms import ModelForm
+from .models import Student, User
+
+
+# Create the form class.
+class UserSignUpForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'password']
+
+class ProfileSignUpForm(ModelForm):
+    class Meta:
+        model = Student
+        fields = '__all__'
