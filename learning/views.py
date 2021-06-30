@@ -4,15 +4,21 @@ from . import forms
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
-def index(request):
-    return HttpResponse("<h1>Hello World</h1>")
+@csrf_exempt
+def login(request):
+    if request.method == 'POST':
+        data = request.POST
+        return HttpResponse("<h1>Logged In</h1>")
+    else:
+        form = forms.UserForm()
+        return render(request, 'learning/login.html', {'form':form})
 
 @csrf_exempt
 def signup(request):
-    if request.method == "POST":
-        # student_data = Student.objects.create(first_name=request.POST.get())
-        return HttpResponse("<h1>Submitted</h1>")
+    if request.method == 'POST':
+        data = request.POST
+        return HttpResponse("<h1>Signed Up</h1>")
     else:
-        userform = forms.UserSignUpForm()
-        profileform = forms.ProfileSignUpForm()
+        userform = forms.UserForm()
+        profileform = forms.ProfileForm()
         return render(request, 'learning/signup.html', {'userform':userform, 'profileform':profileform})
