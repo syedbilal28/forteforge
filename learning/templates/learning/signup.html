@@ -207,6 +207,12 @@
         no_results_text: "Oops, nothing found!"
     })
 
+    $("#id_dob").get(0).type = "date"
+    $("#id_email").get(0).type = "email"
+    $("#id_password").get(0).type = "password"
+    $("#id_postal_code").get(0).type = "number"
+    
+
     $(function () {
         $('#checkbox').click(function () {
             $('#btn-signup').prop('disabled', !$('#checkbox:checked').length);

@@ -3,6 +3,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
+    <style>
         .form-wrapper{
             background-color: aqua;
             min-width: 560px;
@@ -48,10 +49,13 @@
             <div class="px-5 m-3 my-4">
                 <h5>Login</h5>
             </div>
-            <form action="#">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
                 <div class="form-group px-5 m-3">
-                    <input type="email" class="form-control input-box" placeholder="Enter Username">
-                    <input type="password" class="form-control input-box" placeholder="Enter Password">
+                    <!-- <input type="email" class="form-control input-box" placeholder="Enter Username"> -->
+                    {{ form.email }}
+                    <!-- <input type="password" class="form-control input-box" placeholder="Enter Password"> -->
+                    {{ form.password }}
                 </div>
 
             
@@ -93,4 +97,13 @@
             <div class="mx-2"><p>Advertising</p></div>
         </div>
     </footer>
+
+    <script>
+        const ids = ["id_email", "id_password"]
+        ids.forEach((id) => {
+            const element = document.getElementById(id)
+            element.classList.add('input-box')
+            element.classList.add('form-control')
+        })
+    </script>
 {% endblock %}
