@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .box{
+            border: black;
+        }
+        .choice-btn{
+            background-color: black;
+            opacity: 0.6;
+            border: none;
+        }
+        .choice-btn:hover{
+            background-color: black;
+            opacity: 0.8;
+            transition: 0.3s;
+
+        }
+        .flex-item{
+            border: 1px solid #e6e6e6;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+        .nav{
+            display: block !important;
+        }
+        #title{
+            opacity: 0.6;
+        }
+        @media only screen and (max-width: 600px) {
+        .flex-item {
+            min-width: 80vw !important;
+        }
+        .main-flex{
+            flex-direction: column !important;
+        }
+}
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <header class="nav p-3 px-5 shadow">
+        <h3 id="title">Forteforge </h3>
+        
+    </header>
+    <div class="container">
+        <div class="container-top justify-content-center text-center my-4">
+            <h5>Please choose your user type for <br><strong>SIGN UP</strong></h5>
+        </div>
+        <div class="d-flex flex-row justify-content-center align-items-center main-flex">
+            <div class="flex-item box d-flex flex-column justify-content-center align-items-center py-5 px-3">
+                <div class="top-half p-3">
+                    <h4>Student/Learner</h4>
+                </div>
+                <div class="bottom-half p-3">
+                    <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
+                </div>
+                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
+            </div><br>
+            <div class="flex-item d-flex flex-column justify-content-center align-items-center py-5 px-3">
+                <div class="top-half p-3">
+                    <h4>Educator</h4>
+                </div>
+                <div class="bottom-half p-3">
+                    <p>Platform where learning is personalized, <br> adaptive and lifelong, allowing learners<br>from anywhere access superior instruction</p>
+                </div>
+                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
+            </div><br><br>
+            <div class="flex-item d-flex flex-column justify-content-center align-items-center py-5 px-3">
+                <div class="top-half p-3">
+                    <h4>Enterprise</h4>
+                </div>
+                <div class="bottom-half p-3">
+                    <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
+                </div>
+                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

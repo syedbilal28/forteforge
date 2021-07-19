@@ -29,3 +29,6 @@ def signup(request):
         userform = UserForm()
         profileform = ProfileForm()
     return render(request, 'learning/signup.html', {'userform':userform, 'profileform':profileform})
+
+def signup_choice(request):
+    return render(request,"learning/signup-type.html")
