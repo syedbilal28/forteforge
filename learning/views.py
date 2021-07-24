@@ -32,3 +32,6 @@ def signup(request):
 
 def signup_choice(request):
     return render(request,"learning/signup-type.html")
+
+def Home(request):
+    return render(request,"learning/home.html")
