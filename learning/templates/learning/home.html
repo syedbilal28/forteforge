@@ -29,11 +29,21 @@
         .desc-flexwrapper{
             position: absolute;
             margin-top: -5%;
+            z-index: 99;
         }
         .category:hover{
             margin-top: -50px;
             transition: 1s;
             cursor: pointer;
+        }
+        .nav-link{
+            font-weight: 500;
+            color: #666;
+            text-decoration: none;
+        }
+        .nav-link:hover{
+            color:#333;
+            transition: 0.2s;
         }
     </style>
 </head>
@@ -45,19 +55,19 @@
         <div class="col-8">
             <div class="d-flex justify-content-center align-items-center">
                 <div class="flex-item px-2">
-                    <a href="">Home</a>
+                    <a href="" class="nav-link">Home</a>
                 </div>
                 <div class="flex-item px-2">
-                    <a href="">Community</a>
+                    <a href="" class="nav-link">Community</a>
                 </div>
                 <div class="flex-item px-2">
-                    <a href="">Events</a>
+                    <a href="" class="nav-link">Events</a>
                 </div>
                 <div class="flex-item px-2">
-                    <a href="">Services</a>
+                    <a href="" class="nav-link">Services</a>
                 </div>
                 <div class="flex-item px-2">
-                    <a href="">Partnerships</a>
+                    <a href="" class="nav-link">Partnerships</a>
                 </div>
             </div>
 
@@ -69,7 +79,7 @@
                         <p class="m-0">User</p>
                     </div>
                     <div class="row">
-                        <a href=""><strong>Logout</strong></a>
+                        <a href="" class="nav-link"><strong>Logout</strong></a>
                     </div>
                 </div>
                 <div class="col-2 text-right">

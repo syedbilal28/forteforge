@@ -4,60 +4,68 @@
 
 {% block content %}
     <style>
-        .get{
+        /* .get{
             width: 70%;
             border-radius: 8px;
             padding: 10px;
-        }
+        } */
         .get-1{
             width: 30%;
             border-radius: 8px;
             padding: 10px;
         }
-        .form-control{
+        /* .form-control{
             margin-left: 100px;
             margin-right: 100px;
-        }
+        } */
     </style>
 
-    <header class="nav"></header>
-    <div class="container d-flex justify-content-center">
-        <form action="" class="form-control">
+    <header class="nav p-3 px-5 shadow">
+            <h3 id="title">Forteforge </h3>
+            
+    </header>
+    <div class="container d-flex justify-content-center my-5">
+        <form action="" class="w-100">
             <div class="form-wrapper">
-                <h4>Sigu Up as <br><strong>ENTERPRISE</strong></h4><br>
+                <h4>Sign Up as <br><strong><span class="h5">ENTERPRISE</span></strong></h4><br>
                 <h5>Company Details</h5>
                 <div class="row">
                     <div class="col">
-                        <label for="cname"><strong>Company Details</strong></label><br>
-                        <input class="get" type="text" name="" id="cname" placeholder="Enter Company Name">
+                        <label for="cname"><strong>Company Name</strong></label><br>
+                        <input class="form-control" type="text" name="" id="cname" placeholder="Enter Company Name">
                     </div>
-                    <div class="col"></div>
+                    <div class="col">
+                        <label for=""><strong>Learner Type</strong></label>
+                        <select name="" id="" class="custom-select">
+                            <option value="">Select Learner Type</option>
+                        </select>
+                    </div>
                 </div><br>
-                <h5>Resposible Officer</h5>
+                <h5 class="my-3">Resposible Officer</h5>
                 <div class="row">
                     <div class="col">
                         <label for="first-name"><strong>First Name</strong> </label><br>
-                        <input class="get" type="text" name="first name" id="first-name" placeholder="Enter First Name">
+                        <input class="form-control" type="text" name="first name" id="first-name" placeholder="Enter First Name">
                     </div>
                     <div class="col">
                         <label for="last-name"><strong>Last Name</strong></label><br>
-                        <input class="get" type="text" name="last name" id="last-name" placeholder="Enter Last Name">
+                        <input class="form-control" type="text" name="last name" id="last-name" placeholder="Enter Last Name">
                     </div>
                 </div><br>
                 <div class="row">
                     <div class="col"> 
-                        <label for="tittle"><strong>Tittle</strong></label><br>
-                        <input class="get" type="text" name="" id="tittle" placeholder="Enter Tittle of Officer">
+                        <label for="title"><strong>Title</strong></label><br>
+                        <input class="form-control" type="text" name="" id="tittle" placeholder="Enter Title of Officer">
                     </div>
                     <div class="col">
                         <label for="function"><strong>Function</strong></label><br>
-                        <input class="get" type="text" name="" id="function" placeholder="Enter Function of Officer">
+                        <input class="form-control" type="text" name="" id="function" placeholder="Enter Function of Officer">
                     </div>     
                 </div><br>
                 <div class="row">
                     <div class="col">
                         <label for="work-email"><strong>Work Email</strong></label><br>
-                        <input class="get" type="text" name="" id="work-email" placeholder="Enter Work Email">
+                        <input class="form-control" type="text" name="" id="work-email" placeholder="Enter Work Email">
                     </div>
                     <div class="col"></div>
                 </div><br>
@@ -65,45 +73,45 @@
                 <div class="row">
                     <div class="col">
                         <label for="postal code"><strong>Postal Code</strong></label><br>
-                        <input class="get" type="number" name="postal code" id="postal code" placeholder="Enter Postal Code">
+                        <input class="form-control" type="text" name="postal code" id="postal code" placeholder="Enter Postal Code">
                     </div>
                     <div class="col">
                         <label for="street name"><strong>Street Name</strong></label><br>
-                        <input class="get" type="text" name="street name" id="street name" placeholder="Enter Street Name">
+                        <input class="form-control" type="text" name="street name" id="street name" placeholder="Enter Street Name">
                     </div>
                 </div><br>
                 <div class="row">
                     <div class="col">
                         <label for="city"><strong>City</strong></label><br>
-                        <input class="get" type="text" name="" id="city" placeholder="Enter City">
+                        <input class="form-control" type="text" name="" id="city" placeholder="Enter City">
                     </div>
                     <div class="col">
                         <label for="state"><strong>State</strong></label><br>
-                        <input class="get" type="text" name="state" id="state" placeholder="Enter State">
+                        <input class="form-control" type="text" name="state" id="state" placeholder="Enter State">
                     </div>
                 </div><br>
                 <div class="row">
                     <div class="col">
                         <label for="country"><strong>Country</strong></label><br>
-                        <input class="get" type="text" name="" id="country" placeholder="Enter Country">
+                        <input class="form-control" type="text" name="" id="country" placeholder="Enter Country">
                     </div>
                     <div class="col">
                         <label for="email"><strong>Email</strong></label><br>
-                        <input class="get" type="email" name="" id="email" placeholder="Enter Email">
+                        <input class="form-control" type="email" name="" id="email" placeholder="Enter Email">
                     </div>
                 </div><br>
-                <h5>Security</h5>
+                <h5 class="my-3">Security</h5>
                 <div class="row">
                     <div class="col">
                         <label for="password"><strong>Password</strong></label><br>
-                        <input class="get" type="password" name="" id="password" placeholder="Enter Password">
+                        <input class="form-control" type="password" name="" id="password" placeholder="Enter Password">
                     </div>
                     <div class="col">
                         <label for="c-password"><strong>Confirm Password</strong></label><br>
-                        <input class="get" type="password" name="" id="c-password" placeholder="Re-enter Password">
+                        <input class="form-control" type="password" name="" id="c-password" placeholder="Re-enter Password">
                     </div>
                 </div><br>
-                <h5>Requirement</h5><br>
+                <!-- <h5>Requirement</h5><br>
                 <form>
                     <fieldset id="group1">
                       <input type="radio" value="tasks" name="group1">
@@ -131,15 +139,15 @@
                       <input type="radio" value="Operations" name="group3">
                       <label for="Operations">Operations</label>
                     </fieldset>
-                  </form><br>
-                  <div class="row">
+                  </form><br> -->
+                  <!-- <div class="row">
                       <div class="col">
                           <h6><strong>Deadline of Requirement</strong></h6>
                           <input class="get" type="date" name="" id="" placeholder="Select Date">
                       </div>
                       <div class="col"></div>
-                  </div><br>
-                  <h5>Others</h5>
+                  </div><br> -->
+                  <!-- <h5>Others</h5>
                   <form>
                       <h6><strong>Faciliation Interest</strong></h6>
                     <fieldset id="group1">
@@ -163,13 +171,14 @@
                         <input type="radio" value="classes" name="group2">
                         <label for="classes">Classes</label>
                     </fieldset>
-                  </form><br>
+                  </form><br> -->
                   <div>
                       <input type="checkbox" id="check">
                       <label for="check">I understand and agree <strong>with the terms and Conditions</strong></label>
                   </div>
                   <div>
-                      <input class="get-1" type="submit" value="Complete Your Signup">
+                      
+                      <button class="btn btn-secondary px-5 py-2 my-3" type="submit" >COMPLETE YOUR SIGNUP</button>
                   </div>
             </div>
         </form>

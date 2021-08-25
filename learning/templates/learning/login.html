@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
     <style>
         .form-wrapper{
-            background-color: aqua;
+            background-color: #f2f2f2;
             min-width: 560px;
             min-height: 400px;
             border-radius: 8px;
@@ -13,12 +13,20 @@
         .input-box {
             margin-top: 10px;
             min-height: 48px;
-            border: none;
+            /* border: 1px solid #ccc; */
+            background-color:#e6e6e6 ;
         }
         .butn{
             width: 78%;
             margin: 0px 66px;
             min-height: 56px;
+            background-color: #666;
+            border: none;
+        }
+        .butn:hover{
+            background-color: #333;
+            border: none;
+            transition: 0.3s
         }
         .fab{
             /* width: 90px;  */
@@ -33,21 +41,40 @@
         }
 
         .bottom {
-            background-color: white;
-            position: fixed;
+            /* position: absolute !important; */
+            background: transparent;
             bottom: 0px;
             width: 100%;
             min-height: 18%;
+            font-size: 20px;
+            font-weight: 500;
         }
+        body{
+            background-image: url("{% static 'login-bg.jpg' %}");
+            /* background-image: url("img_girl.jpg"); */
+
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .container{
+            width: 100vw;
+        }
+        
     </style>
 
     <div class="container d-flex justify-content-center align-items-center flex-column">
+        <!-- <img src="{% static 'login-bg.jpg' %}" alt="background"> -->
         <div class="my-5">
-            <h2>Forteforge</h2>
+            <h2 class="h1">Forteforge</h2>
         </div>
         <div class="form-wrapper">
             <div class="px-5 m-3 my-4">
-                <h5>Login</h5>
+                <h5 >Login</h5>
             </div>
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
@@ -85,18 +112,20 @@
                     <a href=""><i class="fab fa-apple"></i></a>
                 </div>
         </div>
+        
     </div>
+    <footer class="bottom my-5">
+            <div class="d-flex justify-content-center align-items-center">
+                <div class="mx-2"><p>Home</p> </div>
+                <div class="mx-2"><p>About US</p></div>
+                <div class="mx-2"><p>Get Hired</p></div>
+                <div class="mx-2"><p>Hire an Intern</p></div>
+                <div class="mx-2"><p>Careers at Forteforge</p></div>
+                <div class="mx-2"><p>Advertising</p></div>
+            </div>
+        </footer>
 
-    <footer class="bottom">
-        <div class="d-flex justify-content-center align-items-center">
-            <div class="mx-2"><p>Home</p> </div>
-            <div class="mx-2"><p>About US</p></div>
-            <div class="mx-2"><p>Get Hired</p></div>
-            <div class="mx-2"><p>Hire an Intern</p></div>
-            <div class="mx-2"><p>Careers at Forteforge</p></div>
-            <div class="mx-2"><p>Advertising</p></div>
-        </div>
-    </footer>
+    
 
     <script>
         const ids = ["id_email", "id_password"]
@@ -105,5 +134,8 @@
             element.classList.add('input-box')
             element.classList.add('form-control')
         })
+        document.querySelector("#id_email").placeholder="Enter Username"
+        document.querySelector("#id_password").placeholder="Enter Password"
+
     </script>
 {% endblock %}

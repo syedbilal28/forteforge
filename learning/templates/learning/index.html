@@ -1,0 +1,477 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "learning/links.html" %}
+    <title>Forte Forge</title>
+    <style>
+        @font-face {
+            font-family: Gilroy-Medium;
+            src: url("{% static 'fonts/Gilroy-Medium.ttf' %}");
+        }
+        @font-face {
+            font-family: Gilroy;
+            src: url("{% static 'fonts/Gilroy-Regular.ttf' %}");
+        }
+        body{
+            overflow-x: hidden;
+        }
+        .nav-item{
+            font-family: Gilroy-Medium;
+        }
+        .nav-active{
+            color: #FF5656 !important;
+        }
+        nav{
+            border-bottom: 4px solid #FF5656;
+        }
+        .container{
+            /* min-width: 90vw; */
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+        .top-wrapper,.middle,.categories,.competence,.partners,.contact,footer{
+            font-family: Gilroy;
+            min-width: 100vw;
+        }
+        
+        .scroll{
+            font-size: 20px;
+        }
+        .course-img{
+            min-width: 300px;
+            max-width: 350px;
+        }
+        .course-handler{
+            overflow-x: auto;
+            scrollbar-color: #FF5656 #e6e6e6;
+        }
+        .course-handler::-webkit-scrollbar {
+            height: 10px;
+            width: 50px;
+        }
+        .course-handler::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px #ccc; 
+            border-radius: 10px;
+            margin-right:250px;
+            margin-bottom: 50px;
+        }
+        .course-handler::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 4px 4px 4px 4px #FF5656; 
+            margin-right: 250px;
+            margin-bottom: 50px;
+        }
+        .middle{
+            position: relative;
+        }
+        .course-btn{
+            position: absolute;
+            right: 3rem;
+            background-color: #FF5656;
+            border:1px solid #FF5656;
+            bottom: 0px;
+
+        }
+        .course-btn:hover{
+            background-color: #ff3333;
+            border: 1px solid #ff3333;
+            transition: 0.2s;
+        }
+        .course-arrow{
+            position: absolute;
+            right: 13.5rem;
+            bottom:0.5rem;    
+        }
+
+        .category-black{
+            background-color:#DEE2E6;
+            flex:0 0 1.3333333% !important;
+        }
+        .category{
+            background-color: #F3F8FE;
+        }
+        .competence-img{
+            max-width: 300px;
+        }
+        .partners{
+            background-color: #FF5656;
+            
+        }
+        .contact-bg{
+            width: 100%;
+            margin-top: -50px;
+        }
+        footer{
+            background-color: #3B4758;
+            color: white !important;
+        }
+        .submit{
+            background-color: #FF5656;
+            border: none;
+
+        }
+        .submit:hover{
+            background-color: #ff3333;
+            transition: 0.2s;
+            border: none;
+        }
+        /* .contact{
+            background-image: url("{% static 'img/contact-bg.png' %}");
+        } */
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid p-3">
+          <img src="{% static 'img/fortthlogo.png' %}" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Learning & Assessment Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Partners</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      <div class="container">
+          <!-- Top banner -->
+          <div class="top-wrapper mt-5 px-5">
+              <div class="row w-50 pt-5 py-3">
+                <h1>COMMUNITY PLATFORM HELPING YOU BE COMPETENT AND VALUED, <span class="nav-active">LIFELONG</span></h1>
+              </div>
+              <div class="row">
+                  <div class="col"></div>
+                  <div class="col">
+                    <p class="w-75 h5">
+                        Connecting Learners, Educators and Enterprise through technology and infastructure guaranteeing competence and work, lifelong.
+                    </p>
+                  </div>
+                
+              </div>
+              <div class="d-flex p-5 flex-row-reverse">
+                  <div>
+                    <button class="btn text-right scroll"><i class="fas fa-arrow-down px-1 nav-active"></i> SCROLL DOWN</button>
+                  </div>
+                
+              </div>
+          </div>
+          <!-- Middle Data -->
+          <div class="middle px-4 bg-light">
+            <div class="course-handler p-3 d-flex my-2">
+
+                <div class="course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/finance.png' %}" class="course-img" alt="">
+                    </div>
+                    <div class="row w-50"><p class="course-name py-2 h5">FINANCE</p></div>
+
+                </div>
+                <div class="course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/IT.png' %}" class="course-img" alt="">
+                    </div>
+                    <div class="row w-50"><p class="course-name py-2 h5">INFORMATION TECHNOLOGY</p></div>
+                </div>
+                <div class="course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/contracting.png' %}" class="course-img" alt="">
+                    </div>
+                    <div class="row w-50"><p class="course-name py-2 h5">GENERAL CONTRACTING</p></div>
+                </div>
+                <div class="course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/contracting.png' %}" class="course-img" alt="">
+                    </div>
+                    <div class="row w-50"><p class="course-name py-2 h5">GENERAL CONTRACTING</p></div>
+                </div>
+                <div class="course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/contracting.png' %}" class="course-img" alt="">
+                    </div>
+                    <div class="row w-50"><p class="course-name py-2 h5">GENERAL CONTRACTING</p></div>
+                </div>
+
+
+            </div>
+            <i class="fas fa-arrow-right course-arrow px-1 nav-active"></i>
+            <button class="btn btn-primary d-inline text-right course-btn">ALL COURSES</button>
+
+          </div>
+
+          <!-- Categories section -->
+          <div class="categories p-5 my-5">
+              <div class="categories-wrapper d-flex flex-column px-5">
+                <div class="row category my-4">
+
+                    <div class="col-5 p-5">
+                        <p class="h2 category-title">FOR STUDENTS</p>
+                    </div>
+                    <div class="col-2 category-black my-4">
+
+                    </div>
+                    <div class="col-6 p-5 text-center">
+                        <p class="h5 catgory-desc">Learn, Network, Benefits.</p>
+                    </div>
+                </div>
+
+                <div class="row category my-4">
+                    <div class="col-5 p-5">
+                        <p class="h2 category-title">FOR ENTERPRISES</p>
+                    </div>
+                    <div class="col-2 category-black my-4">
+
+                    </div>
+                    <div class="col-6 p-5 text-center">
+                        <p class="h5 catgory-desc">Learn, Teach, Network, Benefits.</p>
+                    </div>
+                </div>
+
+                <div class="row category my-4">
+                    <div class="col-5 p-5">
+                        <p class="h2 category-title">FOR PARTNERS</p>
+                    </div>
+                    <div class="col-2 category-black my-4">
+
+                    </div>
+                    <div class="col-6 p-5 text-center">
+                        <p class="h5 catgory-desc">Teach, Deliver Services, Product Partnerships, Mentorships & Volunteering.</p>
+                    </div>
+                </div>
+
+              </div>    
+          </div>
+
+          <!-- Competence -->
+
+          <div class="competence">
+              <div class="competence-wrapper p-5">
+
+                    <div class="row text-center">
+                        <h1>How Do We Solve For <span class="nav-active">Competence?</span></h1>
+                    </div>
+
+                    <div class="content-wrapper d-flex justify-content-center my-5">
+
+                        <div class="service m-2 mx-3">
+                            <img src="{% static 'img/Community.png' %}" class="competence-img" alt="">
+                            <div class="row py-2"><p class="text-center competence-text">Join Our Talent Community</p></div>
+                        </div>
+
+                        <div class="service m-2 mx-3">
+                            <img src="{% static 'img/talent.png' %}" class="competence-img" alt="">
+                            <div class="row py-2"><p class="text-center competence-text">Hire Matched Talent</p></div>
+                        </div>
+
+                        <div class="service m-2 mx-3">
+                            <img src="{% static 'img/research.png' %}" class="competence-img" alt="">
+                            <div class="row py-2"><p class="text-center competence-text">Data & Research Services</p></div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="content-wrapper d-flex justify-content-center">
+
+                        <div class="service m-2 mx-3">
+                            <img src="{% static 'img/learning.png' %}" class="competence-img" alt="">
+                            <div class="row py-2"><p class="text-center competence-text">Learning and Assessment Services</p></div>
+                        </div>
+
+                        <div class="service m-2 mx-3">
+                            <img src="{% static 'img/agile.png' %}" class="competence-img" alt="">
+                            <div class="row py-2"><p class="text-center competence-text">Agile Project Management Services</p></div>
+                        </div>
+                    </div>
+
+              </div>
+          </div>
+
+          <!-- Partners -->
+
+          <div class="partners">
+              <div class="row partners-wrapper p-3">
+                <div class="row"><p class="h5 text-center text-white">Trusted by</p></div>
+
+                <div class="partners-content d-flex justify-content-center px-5 py-3">
+                    <div class="partner mx-3">
+                        <img src="{% static 'img/nova.png' %}" alt="">
+                    </div>
+
+                    <div class="partner mx-3">
+                        <img src="{% static 'img/kyro.png' %}" alt="">
+                    </div>
+
+                    <div class="partner mx-3">
+                        <img src="{% static 'img/truvision.png' %}" alt="">
+                    </div>
+
+                    <div class="partner mx-3">
+                        <img src="{% static 'img/brushed.png' %}" alt="">
+                    </div>
+                </div>
+              </div>
+          </div>
+
+            <!-- Contact -->
+
+        <div class="contact p-5 my-5">
+            <div class="wrapper row">
+                <div class="col-5 contact-bg">
+                    <img src="{% static 'img/contact-bg-1.png' %}" class="contact-bg" alt="">
+                </div>
+                <div class="col-7 contact-form">
+                    <h1 class="nav-active px-5">With the Right Platform, Everything Is Possible</h1>
+                    <div class="contact-form-wrapper">
+                        <form action="" id="contact-form" class="p-5">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" placeholder="First Name" class="form-control m-2">
+                                </div>
+                                <div class="col">
+                                    <input type="text" placeholder="Last Name" class="form-control m-2">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" placeholder="Phone" class="form-control m-2">
+                                </div>
+                                <div class="col">
+                                    <input type="email" placeholder="Email address" class="form-control m-2">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" placeholder="City" class="form-control m-2">
+                                </div>
+                                <div class="col">
+                                    <input type="email" placeholder="Country" class="form-control m-2">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control m-2" placeholder="Company">
+                            </div>
+                            <textarea class="form-control m-2" placeholder="Type Text" rows="5"></textarea>
+                            <div class="row text-center mt-5">
+                                <p><input type="checkbox" name="t&c" id="" class="mx-1"><strong>Terms and Conditions & Privacy Policy</strong></p>
+
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                                <div><i class="fab fa-linkedin mx-1"></i></div>
+                                <div><i class="fab fa-facebook mx-1"></i></div>
+                                <div><i class="fab fa-twitter mx-1"></i></div>
+                                <div><i class="fab fa-instagram mx-1"></i></div>
+                                
+                            </div>  
+                            <div class="row text-center">
+                                <button class="btn btn-primary text-center m-2 submit py-3">Submit</button>
+                            </div>
+                            
+
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+      <!-- Footer -->
+<footer class="text-center text-lg-start  p-5">
+        
+            <!-- Section: Links  -->
+            <section class="">
+            <div class="text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <!-- Content -->
+                    <h6 class="text-uppercase fw-bold mb-4 text-left">
+                    INFORMATION
+                    </h6>
+                    <p>
+                        16192 Coastal Highway 
+                        Lewes, Wilmington, 
+                        Delaware
+                    </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                    SITE MAP
+                    </h6>
+                    <p>
+                    <a href="#!" class="text-reset">Home</a>
+                    </p>
+                    <p>
+                    <a href="#!" class="text-reset">Solutions</a>
+                    </p>
+                    <p>
+                    <a href="#!" class="text-reset">Resources</a>
+                    </p>
+                    
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                    COMPANY
+                    </h6>
+                    <p>
+                    <a href="#!" class="text-reset">About Us</a>
+                    </p>
+                    <p>
+                    <a href="#!" class="text-reset">Customer</a>
+                    </p>
+                    <p>
+                    <a href="#!" class="text-reset">Careers</a>
+                    </p>
+                    
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                    <!-- Links -->
+                    <h6 class="text-uppercase fw-bold mb-4">
+                    GET STARTED
+                    </h6>
+                    <p>
+                        <a href="#!" class="text-reset">Contact us</a>
+                    </p>
+                    
+                </div>
+                <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+            </section>
+            <!-- Section: Links  -->
+        
+            
+        </footer>
+        <!-- Footer -->
+</body>
+</html>

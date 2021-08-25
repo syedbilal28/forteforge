@@ -5,6 +5,8 @@ from .forms import ProfileForm,UserForm
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+def index(request):
+    return render(request,"learning/index.html")
 @csrf_exempt
 def login(request):
     if request.method == 'POST':
@@ -35,3 +37,6 @@ def signup_choice(request):
 
 def Home(request):
     return render(request,"learning/home.html")
+
+def signup_enterprise(request):
+    return render(request,"learning/signup_enterprise.html")
