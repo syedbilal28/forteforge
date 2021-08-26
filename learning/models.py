@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cities_light.models import City,Country
+from smart_selects.db_fields import ChainedForeignKey
 
 # Create your models here.
 class Student(models.Model):
@@ -11,5 +13,14 @@ class Student(models.Model):
     state = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     portfolio = models.FileField()
+
+
+class Contact(models.Model):
+    first_name=models.CharField(max_length=100)
+    last_name=models.CharField(max_length=100)
+    phone=models.CharField(max_length=50)
+    email=models.EmailField()   
+    count = models.ForeignKey(Country, on_delete=models.CASCADE)
+    city = ChainedForeignKey(City, chained_field="count", chained_model_field="country")
 
 
