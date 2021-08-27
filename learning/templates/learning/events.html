@@ -32,10 +32,36 @@
             height: 100%;
         }
         .session-img{
-            max-width: 200px;
+            max-width: 250px;
         }
         .session-title-holder{
             border-bottom: 1px solid #707070;
+        }
+        .sessions,.learn{
+            width:100vw;
+            font-family: Gilroy;
+        }
+        .read-more-btn{
+            background-color: #FF5656;
+            border: none;
+
+        }
+        .read-more-btn:hover{
+            background-color: #ff3333;
+            border: none;
+            transition: 0.3s;
+        }
+        .learn-img{
+            max-width: 150px;
+            margin: auto;
+            /* max-height: ; */
+        }
+        .height-limit{
+            min-height: 150px;
+            max-height: 180px;
+        }
+        .trained{
+            font-family: Gilroy;
         }
     </style>
 </head>
@@ -49,10 +75,10 @@
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item ">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item ">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item nav-active">Learning & Assessment Events</a>
+                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item nav-active">Learning & Assessment Events</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
@@ -85,13 +111,13 @@
                 </div>
             </div>
         </div>
-        <div class="sessions">
+        <div class="sessions p-5">
             <div class="sessions-wrapper">
                 <div class="heading-wrapper">
-                    <h2 class="nav-active">Upcoming Live Sessions</h2>
+                    <h2 class="nav-active text-center">Upcoming Live Sessions</h2>
                 </div>
-                <div class="sessions-content d-flex justify-content-center">
-                    <div class="session">
+                <div class="sessions-content d-flex justify-content-center my-5">
+                    <div class="session p-3 shadow rounded-3 mx-2">
                         <div class="row">
                             <div class="col-5">
                                 <img src="{% static 'img/session-1.png' %}" class="session-img w-100" alt="">
@@ -103,7 +129,7 @@
                                     <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
                                     <div class="row">
                                         <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
-                                        <div class="col-6 review-holder">
+                                        <div class="col-8 review-holder">
                                             <i class="rating__star far fa-star"></i>
                                             <i class="rating__star far fa-star"></i>
                                             <i class="rating__star far fa-star"></i>
@@ -113,10 +139,132 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="row price-holder"><p class="session-price nav-active">$599</p></div>
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$599</p></div>
                                     <div class="row">
-                                        <div class="col terms-holder"><p class="terms">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="course-btn btn btn-primary rounded pill">Read More</button></div>
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-2.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Data Analysis With Microsoft Office Excel Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="trained">
+            <div class="trained-wrapper p-5">
+                <div class="row">
+                    <h1 class="text-secondary">GET TRAINED. GET HIRED.</h1>
+                </div>
+                
+                <div class="row">
+                    <p class="text-secondary">We offer wide variety of programs and courses, led by
+                        leading industry experts.</p>
+                </div>
+            </div>
+        </div>
+        <div class="learn">
+            <div class="learn-wrapper p-5">
+                <div class="learn-container p-5">
+                    <div class="learn-top">
+                        <div class="row">
+                            <h1>How Will You Learn</h1>
+                        </div>
+                        <div class="row">
+                            <h4>an Immersive Learning Experience</h4>
+                        </div>
+                    </div>
+                    <div class="learn-bottom my-5">
+                        <div class="row">
+                            <div class="col">
+                                <div class="method text-center mx-2">
+                                    <div class="row text-center height-limit">
+                                        <img src="{% static 'img/suitcase.png' %}" class="learn-img" alt="">
+                                    </div>
+                                    <div class="row py-4">
+                                        <p>Become Career Ready</p>
+                                    </div>
+                                    <div class="row py-2">
+                                        <p>Cutting-edge curriculum designed in 
+                                            guidance with industry and academia 
+                                            to develop job-ready skill</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="method text-center mx-2">
+                                    <div class="row text-center height-limit">
+                                        <img src="{% static 'img/bookmark.png' %}" class="learn-img" alt="">
+                                    </div>
+                                    <div class="row py-4">
+                                        <p>Learn from Practitiioners</p>
+                                    </div>
+                                    <div class="row py-2">
+                                        <p>Our facilitators are leading practitioners
+                                            with experience on best practices 
+                                           and bring same into the sessions.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="method text-center mx-2">
+                                    <div class="row text-center height-limit">
+                                        <img src="{% static 'img/chart.png' %}" class="learn-img" alt="">
+                                    </div>
+                                    <div class="row py-4">
+                                        <p>Solve real World Problems</p>
+                                    </div>
+                                    <div class="row py-2">
+                                        <p>The capstone projects executed at the 
+                                            end of most classes involve real world data 
+                                            sets with virtual labs for hands-on learning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="method text-center">
+                                    <div class="row text-center height-limit">
+                                        <img src="{% static 'img/tick.png' %}" class="learn-img" alt="">
+                                    </div>
+                                    <div class="row py-4">
+                                        <p>Mentorship after Classes</p>
+                                    </div>
+                                    <div class="row py-2">
+                                        <p>After our classes, we ensure that our students 
+                                            are ambassadors of our classes and is reason 
+                                            they are supported post-course, where required</p>
                                     </div>
                                 </div>
                             </div>
@@ -126,5 +274,6 @@
             </div>
         </div>
       </div>
+      {% include "learning/footer.html" %}
 </body>
-</html>
+</html> 

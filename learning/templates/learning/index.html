@@ -19,10 +19,10 @@
           <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
             <ul class="navbar-nav ml-auto flex-nowrap">
                 <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item nav-active">Home</a>
+                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item nav-active">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Learning & Assessment Events</a>
+                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item">Learning & Assessment Events</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
@@ -276,87 +276,7 @@
         </div>
         
       </div>
-      <!-- Footer -->
-<footer class="text-center text-lg-start  p-5">
-        
-            <!-- Section: Links  -->
-            <section class="">
-            <div class="text-md-start mt-5">
-                <!-- Grid row -->
-                <div class="row mt-3">
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                    <!-- Content -->
-                    <h6 class="text-uppercase fw-bold mb-4 text-left">
-                    INFORMATION
-                    </h6>
-                    <p>
-                        16192 Coastal Highway 
-                        Lewes, Wilmington, 
-                        Delaware
-                    </p>
-                </div>
-                <!-- Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                    SITE MAP
-                    </h6>
-                    <p>
-                    <a href="#!" class="text-reset">Home</a>
-                    </p>
-                    <p>
-                    <a href="#!" class="text-reset">Solutions</a>
-                    </p>
-                    <p>
-                    <a href="#!" class="text-reset">Resources</a>
-                    </p>
-                    
-                </div>
-                <!-- Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                    COMPANY
-                    </h6>
-                    <p>
-                    <a href="#!" class="text-reset">About Us</a>
-                    </p>
-                    <p>
-                    <a href="#!" class="text-reset">Customer</a>
-                    </p>
-                    <p>
-                    <a href="#!" class="text-reset">Careers</a>
-                    </p>
-                    
-                </div>
-                <!-- Grid column -->
-        
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                    GET STARTED
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Contact us</a>
-                    </p>
-                    
-                </div>
-                <!-- Grid column -->
-                </div>
-                <!-- Grid row -->
-            </div>
-            </section>
-            <!-- Section: Links  -->
-        
-            
-        </footer>
-        <!-- Footer -->
+      {% include "learning/footer.html" %}
         <script>
             function ScrollDown(){
                 window.scrollBy(0, window.innerHeight);

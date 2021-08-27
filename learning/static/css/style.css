@@ -1,11 +1,11 @@
-{% load static %}
+
 @font-face {
     font-family: Gilroy-Medium;
-    src: url("{% static 'fonts/Gilroy-Medium.ttf' %}");
+    src: url('/static/fonts/Gilroy-Medium.ttf');
 }
 @font-face {
     font-family: Gilroy;
-    src: url("{% static 'fonts/Gilroy-Regular.ttf' %}");
+    src: url('/static/fonts/Gilroy-Regular.ttf');
 }
 body{
     overflow-x: hidden;

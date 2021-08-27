@@ -43,8 +43,8 @@ def signup(request):
 def signup_choice(request):
     return render(request,"learning/signup-type.html")
 
-def Home(request):
-    return render(request,"learning/home.html")
+def Careers(request):
+    return render(request,"learning/careers.html")
 
 def signup_enterprise(request):
     return render(request,"learning/signup_enterprise.html")
