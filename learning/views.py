@@ -1,12 +1,20 @@
 from learning.models import Student
 from django.shortcuts import redirect, render, HttpResponse
 # from . import forms
-from .forms import ProfileForm,UserForm
+from .forms import ProfileForm,UserForm,ContactForm
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
-    return render(request,"learning/index.html")
+    if request.method =="POST":
+        form=ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect("index") 
+    else:
+        form=ContactForm()
+        context={"form":form}
+        return render(request,"learning/index.html",context)
 @csrf_exempt
 def login(request):
     if request.method == 'POST':
@@ -40,3 +48,6 @@ def Home(request):
 
 def signup_enterprise(request):
     return render(request,"learning/signup_enterprise.html")
+
+def events(request):
+    return render(request,"learning/events.html")

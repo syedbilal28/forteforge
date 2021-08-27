@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'cities_light'
 ]
 CITIES_LIGHT_TRANSLATION_LANGUAGES = ['fr', 'en']
-CITIES_LIGHT_INCLUDE_COUNTRIES = ['FR']
+CITIES_LIGHT_INCLUDE_COUNTRIES = ['FR',"US",'AL','AR','AM',"AU","BS","BD","BE","BR","CA","CL","CO","HR","CU","CZ","DK","FI","DE","IN","IL","JP","KE","MY","MX","NL","NZ","PK","PT","ES","CH","AE",]
 CITIES_LIGHT_INCLUDE_CITY_TYPES = ['PPL', 'PPLA', 'PPLA2', 'PPLA3', 'PPLA4', 'PPLC', 'PPLF', 'PPLG', 'PPLL', 'PPLR', 'PPLS', 'STLMT',]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

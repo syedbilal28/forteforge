@@ -20,7 +20,9 @@ class Contact(models.Model):
     last_name=models.CharField(max_length=100)
     phone=models.CharField(max_length=50)
     email=models.EmailField()   
-    count = models.ForeignKey(Country, on_delete=models.CASCADE)
-    city = ChainedForeignKey(City, chained_field="count", chained_model_field="country")
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    company=models.CharField(max_length=100,null=True)
+    message=models.CharField(max_length=1000,null=True)
 
 

@@ -1,0 +1,121 @@
+{% load static %}
+@font-face {
+    font-family: Gilroy-Medium;
+    src: url("{% static 'fonts/Gilroy-Medium.ttf' %}");
+}
+@font-face {
+    font-family: Gilroy;
+    src: url("{% static 'fonts/Gilroy-Regular.ttf' %}");
+}
+body{
+    overflow-x: hidden;
+}
+.nav-item{
+    font-family: Gilroy-Medium;
+}
+.nav-active{
+    color: #FF5656 !important;
+}
+nav{
+    border-bottom: 4px solid #FF5656;
+}
+.container{
+    /* min-width: 90vw; */
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.top-wrapper,.middle,.categories,.competence,.partners,.contact,footer{
+    font-family: Gilroy;
+    min-width: 100vw;
+}
+
+.scroll{
+    font-size: 20px;
+}
+.course-img{
+    min-width: 300px;
+    max-width: 350px;
+}
+.course-handler{
+    overflow-x: auto;
+    scrollbar-color: #FF5656 #e6e6e6;
+}
+.course-handler::-webkit-scrollbar {
+    height: 10px;
+    width: 50px;
+}
+.course-handler::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #ccc; 
+    border-radius: 10px;
+    margin-right:250px;
+    margin-bottom: 50px;
+}
+.course-handler::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 4px 4px 4px 4px #FF5656; 
+    margin-right: 250px;
+    margin-bottom: 50px;
+}
+.middle{
+    position: relative;
+}
+.course-btn{
+    position: absolute;
+    right: 3rem;
+    background-color: #FF5656;
+    border:1px solid #FF5656;
+    bottom: 0px;
+
+}
+.course-btn:hover{
+    background-color: #ff3333;
+    border: 1px solid #ff3333;
+    transition: 0.2s;
+}
+.course-arrow{
+    position: absolute;
+    right: 13.5rem;
+    bottom:0.5rem;    
+}
+
+.category-black{
+    background-color:#DEE2E6;
+    flex:0 0 1.3333333% !important;
+}
+.category{
+    background-color: #F3F8FE;
+}
+.competence-img{
+    max-width: 300px;
+}
+.partners{
+    background-color: #FF5656;
+    
+}
+.contact-bg{
+    width: 100%;
+    margin-top: -50px;
+}
+footer{
+    background-color: #3B4758;
+    color: white !important;
+}
+.submit{
+    background-color: #FF5656;
+    border: none;
+
+}
+.submit:hover{
+    background-color: #ff3333;
+    transition: 0.2s;
+    border: none;
+}
+.select2-container{
+    margin-top: 0.58rem;
+    margin-left: 0.5rem;
+    height: 2.2rem !important;
+}
+.select2-container--default{
+    border: 1px solid #ced4da !important;
+    height: 2.2rem !important;
+}

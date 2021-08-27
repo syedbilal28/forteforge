@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Student, User
+from .models import Student, User,Contact
 
 
 # Create the form class.
@@ -36,3 +36,13 @@ class ProfileForm(ModelForm):
             portfolio = self.cleaned_data["portfolio"]
         )
         return student
+
+class ContactForm(ModelForm):
+    class Meta:
+        model=Contact
+        fields="__all__"
+
+    def __init__(self, *args, **kwargs):
+        super(ContactForm, self).__init__(*args, **kwargs)
+        self.fields['city'].empty_label = "City"
+        self.fields['country'].empty_label = "Country"
