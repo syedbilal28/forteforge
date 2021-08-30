@@ -211,6 +211,7 @@
                     <h1 class="nav-active px-5">With the Right Platform, Everything Is Possible</h1>
                     <div class="contact-form-wrapper">
                         <form action="{% url 'index' %}" method="POST" id="contact-form" class="p-5">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col">
                                     <!-- <input type="text" placeholder="First Name" class="form-control m-2"> -->
