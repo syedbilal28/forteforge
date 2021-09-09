@@ -1,0 +1,975 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "learning/links.html" %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Course</title>
+    <style>
+        .content-object:hover{
+            cursor: pointer;
+        }
+        .more-course-img{
+            min-width: 100%;
+            max-width: 375px;
+        }
+        .more-instructor-img{
+            max-width: 80px;
+            min-height: 80px;
+        }
+        .neg-margin{
+            margin-top: -40px;
+        }
+        .course-handler{
+            overflow-x: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid p-3">
+          <img src="{% static 'img/fortthlogo.png' %}" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item ">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item nav-active">Learning & Assessment Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Partners</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      <div class="container">
+          <!-- Top banner -->
+          <div class="top-wrapper top-img-container">
+            <img src="{% static 'img/library-bg.jpg' %}" class="w-100 overlay-1" alt="">
+              <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt="">
+            <div class="main-wrapper text-white px-5 py-5 d-flex flex-column justify-content-center">
+                <div class="row w-50 pt-5 py-3 mt-5">
+                <h1 class="fw-bold extra">MICROSOFT PROJECT<br>MASTER COURSE</h1>
+                </div>
+                <div class="d-flex flex-row my-5">
+                    <div class="mx-2">
+                        <button class="btn btn-primary book-btn py-3 px-5"><h3 class="fw-bold m-0">BOOK NOW</h3></button>    
+                    </div>
+                    <div class="mx-3">
+                        <h3 class="fw-bold py-3">$599</h3>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+        <!-- Tree -->
+        <div class="tree py-4 px-5">
+            <div class="d-flex flex-row">
+                <div class="tree-element">
+                    <span>>></span><p class="d-inline">Home</p>
+                </div>
+
+                <div class="tree-element mx-3">
+                    <span>>></span><p class="d-inline">Learning & Assessment Event</p>
+                </div>
+                <div class="tree-element mx-3">
+                    <span>>></span><p class="nav-active d-inline">Microsoft Project Master Course</p>
+                </div>
+            </div>
+        </div>
+        <!-- What you'll learn section -->
+        <div class="learn p-5">
+            <div class="learn-container border border-secondary">
+                <div class="ul-wrapper py-4 px-5">
+                    <p class="fw-bold">What you'll learn</p>
+                    <ul class="learn-list">
+                        <li>Create EXPERT-LEVEL Project Plans using Microsoft Project with hands-on Project Exercises</li>
+                        <li>Manage all your Resources inside Microsoft Project - People, money, machines, licenses or even shared resources</li>
+                        <li>Create 100s of world-class, self-updating Graphical Reports - at the click of a button</li>
+                        <li>This course would explain the critical software project management framework and concepts through presentation, demonstrations
+                            and case study using MS project professional</li>
+                        <li>Experienced project manager can pick up skills of MS project professional as a beginner and start using MS project professional for their project</li>
+                        <li>Learning is easier through application & activities</li>
+                        <li>Apart from Waterfall methodology, its one among the first course to cover Agile and Kanban Methodology through the
+                            atest version of MS projects professional built in functionality.</li>
+                        <li>Easily understand Critical Path and Eamed value analysis through application</li>
+                        <li>Case study on water fall methodology to understand project concepts/framework and MS project professional easier</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="content p-5">
+            <div class="content-container border border-secondary">
+                <div class="content-header p-5">
+                    <div class="row">
+                        <div class="col">
+                            <div id="course-content" class="content-object active-content d-flex justify-content-center border border-secondary py-3 ">
+                                <div class="object mx-2"><i class="fas fa-file h4"></i></div>
+                                <div class="object mx-2"><span class="fw-bold">COURSE CONTENT</span></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="course-instructor" class="content-object d-flex justify-content-center border border-secondary py-3">
+                                <div class="object mx-2"><i class="fas fa-user-circle h4"></i></div>
+                                <div class="object mx-2"><span class="fw-bold">INSTRUCTOR</span></div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div id="course-overview" class="content-object d-flex justify-content-center border border-secondary py-3">
+                                <div class="object mx-2"><i class="fas fa-bookmark h4"></i></div>
+                                <div class="object mx-2"><span class="fw-bold">OVERVIEW</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-body p-5">
+                    <!-- Body for lectures -->
+                    <div class="lectures">
+                        
+                            <div class="lectures-list px-5">
+                                <div class="day py-3" >
+                                    <div class="row day-header">
+                                        <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                        <div class="col-2 h3 fw-bold">Day 1</div>
+                                    </div>
+                                    <div class="lectures-holder">
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="day py-3" >
+                                    <div class="row day-header">
+                                        <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                        <div class="col-2 h3 fw-bold">Day 2</div>
+                                    </div>
+                                    <div class="lectures-holder">
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="day py-3" >
+                                    <div class="row day-header">
+                                        <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                        <div class="col-2 h3 fw-bold">Day 3</div>
+                                    </div>
+                                    <div class="lectures-holder">
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="day py-3" >
+                                    <div class="row day-header">
+                                        <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                        <div class="col-2 h3 fw-bold">Day 4</div>
+                                    </div>
+                                    <div class="lectures-holder">
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                        <div class="lecture row py-4">
+                                            <div class="col-1"></div>
+                                            <div class="col-2">
+                                                <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                            </div>
+                                            <div class="col-7">
+                                                <p>Introduction to Microsoft Masterclass</p>
+                                            </div>
+                                            <div class="col-1">
+                                                <a href="#" class="nav-active">Preview</a>
+                                            </div>
+                                            <div class="col-1"><p>00:65</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="book p-5">
+            <div class="book-container d-flex flex-row">
+                <div class="mx-2">
+                    <button class="btn btn-primary book-btn py-3 px-5 "><h3 class="fw-bold m-0 h4">BOOK NOW</h3></button>    
+                </div>
+                <div class="mx-3">
+                    <h3 class="fw-bold py-3 h4">$599</h3>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="recommendations p-5">
+            <div class="share">
+                <p class="text-secondary small d-inline">Share:</p>
+                <div class="social-media-holder d-inline mx-4 h4">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+            </div>
+            <div class="more-courses">
+                <div class="course-handler d-flex my-4 p-3">
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+                    <div class="more-course p-3">
+                        <div class="row">
+                            <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                        </div>
+                        <div class="row more-course-desc">
+                            
+                            <div class="col px-4">
+                                <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                            </div>
+                            <div class="col text-right">
+                                <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                                <div class="d-flex flex-row-reverse nav-active">
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row more-course-title text-center py-2">
+                            <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                        </div>
+    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      </div>
+      {% include 'learning/footer.html' %}
+      <script>
+          $("#course-content").on("click",function(){
+              RemoveContentbg()
+              $(this).addClass("active-content")
+              document.querySelector(".content-body").innerHTML=""
+              document.querySelector(".content-body").innerHTML=`<div class="lectures">
+                        
+                        <div class="lectures-list px-5">
+                            <div class="day py-3" >
+                                <div class="row day-header">
+                                    <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                    <div class="col-2 h3 fw-bold">Day 1</div>
+                                </div>
+                                <div class="lectures-holder">
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="day py-3" >
+                                <div class="row day-header">
+                                    <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                    <div class="col-2 h3 fw-bold">Day 2</div>
+                                </div>
+                                <div class="lectures-holder">
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="day py-3" >
+                                <div class="row day-header">
+                                    <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                    <div class="col-2 h3 fw-bold">Day 3</div>
+                                </div>
+                                <div class="lectures-holder">
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="day py-3" >
+                                <div class="row day-header">
+                                    <div class="col-1 lecture-dropdown py-2 h3"><i class="fas fa-chevron-down"></i></div>
+                                    <div class="col-2 h3 fw-bold">Day 4</div>
+                                </div>
+                                <div class="lectures-holder">
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                    <div class="lecture row py-4">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <i class="fas fa-file h4 mx-2"></i><p class="d-inline">Lecture 1.1</p>
+                                        </div>
+                                        <div class="col-7">
+                                            <p>Introduction to Microsoft Masterclass</p>
+                                        </div>
+                                        <div class="col-1">
+                                            <a href="#" class="nav-active">Preview</a>
+                                        </div>
+                                        <div class="col-1"><p>00:65</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+
+                </div>`
+          })
+          $("#course-instructor").on("click",function(){
+            RemoveContentbg()
+            $(this).addClass("active-content")
+              document.querySelector(".content-body").innerHTML=""
+              document.querySelector(".content-body").innerHTML=`<div class="row">
+                        <div class="col-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle instructor-img" alt="instructor">
+                        </div>
+                        <div class="col-6 instructor-desc px-5">
+                            <h1 class="fw-bold">JUSTUS AIYELA</h1>
+                            <h4 class="h5 fw-bold">Agile professional and Lean Sigma Practitioner</h4>
+                            <div class="mt-3">
+                                <i class="fas fa-star mr-2"></i><p class="d-inline">4.6 instuctor rating</p>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-play-circle mr-2"></i><p class="d-inline">15 Courses</p>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi accusantium nemo, sapiente explicabo minus aut sequi eos, cupiditate tempora nam, tenetur vero odit. Reiciendis aut vero nostrum animi porro commodi, veniam cupiditate libero officia iusto unde ullam perspiciatis provident. Fugiat corporis debitis maxime provident placeat, praesentium exercitationem quo ratione quos! Sit a dolore ipsam praesentium possimus dolor deserunt, minima ut velit quisquam, nesciunt illo voluptate animi modi necessitatibus sunt dolorem repellendus. Molestiae dolorum praesentium iure accusamus rerum reprehenderit laboriosam facere necessitatibus perspiciatis quo, qui cupiditate eaque iusto eligendi! Fuga aperiam sequi eaque molestiae ea deleniti quae aut expedita recusandae temporibus.</p>
+                        </div>
+                        <div class="col-2 d-flex align-items-center justify-content-center">
+                            
+                                <div class="h3">
+                                    <i class="fab fa-instagram"></i>
+                                    <i class="fab fa-linkedin"></i>
+                                    <i class="fab fa-facebook-square"></i>
+                                </div>
+                            
+                        </div>
+                    </div>`
+
+          })
+          $("#course-overview").on("click",function(){
+            
+            RemoveContentbg()
+            $(this).addClass("active-content")
+              document.querySelector(".content-body").innerHTML=""
+              document.querySelector(".content-body").innerHTML=`<div class="overview">
+                        <div class="row">
+                            <div class="col-7">
+                                <div>
+                                    <h1 class="fw-bold py-3">About ForteForge</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi excepturi explicabo magnam dolores alias, nam nemo qui a velit! Non debitis ducimus neque maiores id, amet laboriosam eius eligendi itaque?</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nostrum provident asperiores quae ea, doloribus dicta sit rem et esse saepe magni temporibus expedita ipsa qui excepturi, voluptatem sunt nobis? Mollitia aperiam facere eius libero neque, placeat, et molestias nemo fuga amet minima quia! Enim nihil nesciunt voluptatibus ex labore.</p>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="features p-5">
+                                    <div class="feature underlined row py-3">
+                                        <div class="col-1"><i class="fas fa-file nav-active"></i></div>
+                                        <div class="col-8"><p>Lectures</p></div>
+                                        <div class="col-3"><p class="fw-bold">12</p></div>
+                                    </div>
+                                    <div class="feature underlined row py-3">
+                                        <div class="col-1"><i class="fas fa-clock nav-active"></i></div>
+                                        <div class="col-8"><p>Duration</p></div>
+                                        <div class="col-3"><p class="fw-bold">48 hours</p></div>
+                                    </div>
+                                    <div class="feature underlined row py-3">
+                                        <div class="col-1"><i class="fas fa-level-up-alt nav-active"></i></div>
+                                        <div class="col-8"><p>Skill Level</p></div>
+                                        <div class="col-3"><p class="fw-bold">All levels</p></div>
+                                    </div>
+                                    <div class="feature underlined row py-3">
+                                        <div class="col-1"><i class="fas fa-language nav-active"></i></div>
+                                        <div class="col-8"><p>Language</p></div>
+                                        <div class="col-3"><p class="fw-bold">English</p></div>
+                                    </div>
+                                    <div class="feature underlined row py-3">
+                                        <div class="col-1"><i class="fas fa-check-circle nav-active"></i></div>
+                                        <div class="col-8"><p>Assessment</p></div>
+                                        <div class="col-3"><p class="fw-bold">Yes</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div>
+                                    <h1 class="fw-bold py-3 underlined">Learning Methods</h1>
+                                    <div class="method-holder py-3">
+                                        <div class="method">
+                                            <h4 class="nav-active fw-bold">Collaborative group work</h4>
+                                            <p>Live event - weekly reflection</p>
+                                        </div>
+                                        <div class="method">
+                                            <h4 class="nav-active fw-bold">Self-assessments</h4>
+                                            <p>Interviews, field research, sort & interpretat data</p>
+                                        </div>
+                                        <div class="method">
+                                            <h4 class="nav-active fw-bold">Capstone Project</h4>
+                                            <p>Peer review and feedback - innovation</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6"></div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div>
+                                        <h1 class="fw-bold py-3 underlined">Certifications</h1>
+                                    </div>
+                                    <div class="py-3">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed aut dolorum rerum itaque explicabo dicta nesciunt omnis atque ipsa, harum ratione amet suscipit iure velit perferendis deleniti asperiores quae nam, perspiciatis ipsam? Distinctio eum rerum veritatis facilis ipsum debitis quaerat!</p>
+                                    </div>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div>
+                                        <h1 class="fw-bold py-3 underlined">Learning Outcome</h1>
+                                    </div>
+                                    <div class="py-3">
+                                        <ul class="outcomes">
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                            <li>Lorem ipsum dolor sit amet.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div>
+                                        <h1 class="fw-bold py-3 underlined nav-active">Recap</h1>
+                                    </div>
+                                    <div class="py-3">
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum corporis reprehenderit obcaecati error possimus nostrum laborum omnis, voluptas vitae vel.</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 p-5 h5 d-flex flex-column justify-content-center align-items-center">
+                                    
+                                        <div class="contact-course py-2">
+                                            <i class="fas fa-envelope mx-4 nav-active"></i> <p class="nav-active d-inline">ask@forteforge.com</p>
+                                        </div>
+                                        <div class="contact-course py-2">
+                                            <i class="fas fa-phone-alt mx-4 nav-active"></i> <p class="nav-active d-inline">+ 01 3333 444 5555</p>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+          })
+          function RemoveContentbg(){
+              $("#course-content").removeClass("active-content")
+              $("#course-instructor").removeClass("active-content")
+              $("#course-overview").removeClass("active-content")
+          }
+          $(".lecture-dropdown").on("click",function(){
+            // console.log()
+              var target_div=this.parentNode.parentNode.children[1]
+              
+              if( target_div.style.visibility == "hidden" ){
+                
+                target_div.style.visibility="visible"
+                target_div.style.height="auto"
+                target_div.parentNode.children[0].children[0].children[0].className="fas fa-chevron-up"
+              }
+              else{
+                
+                target_div.style.visibility="hidden"
+                target_div.style.height="0px"
+                target_div.parentNode.children[0].children[0].children[0].className="fas fa-chevron-down"
+              }
+          })
+          
+      </script>
+</body>
+</html>

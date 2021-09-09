@@ -51,3 +51,12 @@ def signup_enterprise(request):
 
 def events(request):
     return render(request,"learning/events.html")
+
+def course(request):
+    return render(request,"learning/course.html")
+
+def instructor(request):
+    return render(request,"learning/instructor.html")
+
+def overview(request):
+    return render(request,"learning/overview.html")
