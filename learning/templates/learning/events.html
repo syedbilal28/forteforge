@@ -37,7 +37,7 @@
         .session-title-holder{
             border-bottom: 1px solid #707070;
         }
-        .sessions,.learn{
+        .sessions,.learn,.course-nav,.courses{
             width:100vw;
             font-family: Gilroy;
         }
@@ -62,6 +62,27 @@
         }
         .trained{
             font-family: Gilroy;
+        }
+        /* New changes */
+        .course-choice{
+            border-bottom: 10px solid #e6e6e6;
+        }
+        .course-active{
+            border-bottom: 10px solid #FF5656;
+            color: #FF5656;
+        }
+        .extra-small{
+            font-size: 10px;
+        }
+        .course{
+            max-width: 324px;
+        }
+        .course-choice:hover{
+            cursor: pointer;
+        }
+        .course:hover{
+            cursor: pointer;
+
         }
     </style>
 </head>
@@ -195,6 +216,411 @@
                 </div>
             </div>
         </div>
+        <div class="course-nav p-5">
+            <div class="row">
+                <div class="col text-right">
+                    <div class="course-choice d-inline py-2 course-active">
+                        <h4 class="fw-bold d-inline">INDUSTRY AGNOSTIC COURSES</h4>
+                    </div>
+                    
+                </div>
+                <div class="col">
+                    <div class="course-choice d-inline py-2">
+                        <h4 class="fw-bold d-inline">INDUSTRY SPECIFIC COURSES</h4>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="courses p-5">
+            <div class="d-flex">
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Agile Project Management + Jira Course</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">NIL</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Events</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">NIL</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Master Data Management Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$599</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Data Analytics With Excel Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$399</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Cloud Computing Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$599</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Lean Six Sigma MasterClass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$1,299</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Big Data Analysis Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$1,299</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Business Analysis Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$599</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Agile Project Management + Jira Masterclass</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">$599</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="course m-3 shadow">
+                    <div class="course-top">
+                        <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                    </div>
+                    <div class="course-bottom py-2 px-3">
+                        <div class="row course-intro">
+                            <div class="col-10">
+                                <p>Business Intelligence Masterclass with Power BI & Tableau</p>
+                            </div>
+                            <div class="col-1">
+                                <strong class="nav-active">NIL</strong>
+                            </div>
+                        </div>
+                        <div class="row course-instructor">
+                            <div><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                            <div><p class="extra-small text-secondary my-2">Read More ></p></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
         <div class="learn">
             <div class="learn-wrapper p-5">
                 <div class="learn-container p-5">
@@ -275,5 +701,17 @@
         </div>
       </div>
       {% include "learning/footer.html" %}
+      <script>
+          $(".course-choice").on("click",function(){
+            RemoveActiveClass()
+            $(this).addClass("course-active")
+          })
+          function RemoveActiveClass(){
+              $(".course-choice").removeClass("course-active")
+          }
+          $(".course").on("click",function(){
+              window.location.href="{% url 'Course' %}"
+          })
+      </script>
 </body>
 </html> 
