@@ -60,3 +60,6 @@ def instructor(request):
 
 def overview(request):
     return render(request,"learning/overview.html")
+
+def LiveEvents(request):
+    return render(request,"learning/live-events.html")
