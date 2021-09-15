@@ -11,5 +11,6 @@ urlpatterns = [
     path("course/",views.course,name="Course"),
     path("course/instructor/",views.instructor,name="instructor"),
     path("course/overview/",views.overview,name="overview"),
-    path("events/live/",views.LiveEvents,name="LiveEvents")
+    path("events/live/",views.LiveEvents,name="LiveEvents"),
+    path("events/live/1/",views.CurrentLiveEvent,name="CurrentLive")
 ]

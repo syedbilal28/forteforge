@@ -63,3 +63,6 @@ def overview(request):
 
 def LiveEvents(request):
     return render(request,"learning/live-events.html")
+
+def CurrentLiveEvent(request):
+    return render(request,"learning/event-live-1.html")

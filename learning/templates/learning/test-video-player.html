@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/809f59b569.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+
+    <title>Test Video Player</title>
+    <style>
+        .video{
+            width: 100%;
+        }
+        .c-video{
+            width: 100%;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .visible{
+            
+            width: 160px;
+            transition: 1s;
+            visibility:visible;
+        }
+        .hidden{
+            visibility: hidden;
+            width: 0px;
+            transition: 1s;
+        }
+        .controls{
+            
+            position: absolute;
+            /* margin-bottom: 50px; */
+            /* height: 100px; */
+            bottom: 50px;
+            width: 100%;
+            
+        }
+        .buttons{
+            visibility: hidden;
+            position: absolute;
+            /* bottom: 40px; */
+        }
+        
+        .no-border-radius{
+            border-radius: 0px;
+        }
+        .border-start{
+            border-radius: .25rem 0px 0px .25rem;
+        }
+        .border-end{
+            border-radius: 0px .25rem .25rem 0px;
+        }
+        input[type=range] {
+            margin-top: 10px;
+            -webkit-appearance: none;
+            background-color: white;
+            width: 150px;
+            height:20px;
+}
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: circle;
+        background-color: white;
+        opacity: 1;
+        width: 5px;
+        height: 26px;
+    }
+    .bg-dark{
+        background-color: rgba(43,43,43,0.5) !important;
+        color: white;
+        border: none;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+        <div class="c-video">
+            <video class="video" src="video.mp4"></video>
+            <div class="controls d-flex justify-content-center align-items-center">
+                <div class="buttons d-flex">
+                    <div class='grey'>
+                        <button class="bg-dark volume-btn border-start p-2 px-3"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="volume-options hidden bg-dark">
+                        <input type="range" class=" bg-dark volume rounded-end volume-value" min="0" max="100" >    
+                    </div>
+                    <div >
+                        <button class="mute bg-dark no-border-radius p-2 px-3 mute"><i class="fas fa-volume-mute"></i></button>
+                    </div>
+                    <div >
+                        <button class="mute bg-dark no-border-radius p-2 px-3 play" data-state="pause"><i class="fas fa-play"></i></button>
+                    </div>
+                    
+                    <div >
+                        <button class="back bg-dark no-border-radius p-2 px-3 backplay"><i class="fas fa-backward"></i></button>
+                    </div>
+                    <div >
+                        <button class="full-screen bg-dark border-end p-2 px-3 full-screen"><i class="fas fa-expand"></i></button>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </div>  
+    <script>
+        $(".full-screen").on("click",function(){
+            document.querySelector(".video").requestFullscreen()
+        })
+        $(".mute").on("click",function(){
+            document.querySelector(".video").muted=true
+        })
+        $(".volume-value").on("change",function(){
+            var volume= parseInt(this.value)/100
+            document.querySelector(".video").volume=volume
+        })
+        $(".play").on("click",function(){
+            if( this.dataset.state == "pause"){
+                $(".video")[0].play()
+                this.innerHTML='<i class="fas fa-pause"></i>'
+                this.dataset.state="play"
+            }
+            else{
+                $(".video")[0].pause()
+                this.innerHTML='<i class="fas fa-play"></i>'
+                this.dataset.state="pause"
+            }
+            
+        })
+        $(".backplay").on("click",function(){
+            v=document.querySelector(".video")
+            v.currentTime = v.currentTime -5 
+        })
+        $(".volume-btn").on("click",function(){
+            target=document.querySelector(".volume-options")
+            console.log(target)
+            if( $(target).css("visibility")  == "hidden" ){
+                
+                $(".volume-options").removeClass("hidden")
+                $(".volume-options").addClass("visible")
+            }
+            else{
+                
+                $(".volume-options").removeClass("visible")
+                $(".volume-options").addClass("hidden")
+            }
+        })
+        $(".video").mouseover(function(){
+            $(".buttons").css("visibility","visible")
+              
+        })
+        $(".video").mouseleave(function(){
+              
+                $(".buttons").css("visibility","hidden")
+                $(".volume-options").removeClass("visible")
+                $(".volume-options").addClass("hidden")
+              
+        })
+        $(".buttons").mouseover(function(){
+            $(".buttons").css("visibility","visible")
+              
+        })
+        
+        
+    </script>
+</body>
+</html>

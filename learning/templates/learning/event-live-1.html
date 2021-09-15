@@ -1,0 +1,594 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "learning/links.html" %}
+    <script src="{% static 'js/video.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Course</title>
+    <style>
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
+        .content-object:hover{
+            cursor: pointer;
+        }
+        .more-course-img{
+            min-width: 100%;
+            max-width: 375px;
+        }
+        .more-instructor-img{
+            max-width: 80px;
+            min-height: 80px;
+        }
+        .neg-margin{
+            margin-top: -40px;
+        }
+        .course-handler{
+            overflow-x: auto;
+        }
+        .main-wrapper{
+            height: 100%;
+        }
+        .join-btn{
+            background-color: white;
+            color: #FF5656;
+            border: none;
+        }
+        .join-btn:hover{
+            background-color: #FF5656;
+            color: white;
+            border: none;
+        }   
+        .event-container{
+            background-color: #FF5656;
+            color: white;
+        }
+        .events,.live-event{
+            min-width: 100vw;
+            font-family: Gilroy;
+        }
+        .presenters{
+            height: 100%;
+        }
+        .presenters-wrapper{
+            border-left: 3px solid rgba(255,255,255,0.5);
+            
+        }
+        .small-img{
+            max-width: 40px;
+        }
+        .event-container-wrapper{
+            border-left: 2px solid rgba(255,255,255,0.3);
+        }
+        .event-list{
+            list-style-type: none;
+        }
+        .event-active{
+            position: absolute;
+            margin-left: -3.35rem;
+            margin-top: 1rem;
+            font-size: 30px;
+            display: inline;
+            background-color: #FF5656;
+            width: 50px;
+
+        }
+        .event-inactive{
+            position: absolute;
+            margin-left: -3rem;
+            margin-top: 1rem;
+            font-size: 20px;
+            
+        }
+        .video{
+            width: 100%;
+        }
+        .red{
+            color: #FD0002;
+        }
+        .green{
+            color: #0F603D;
+        }
+        .lh-2{
+            line-height: 2;
+        }
+        .live-event{
+            background-color: #F8F8FA;
+        }
+        .message{
+            border: 2px solid #ccc;
+            border-radius: 1rem !important;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid p-3">
+          <img src="{% static 'img/fortthlogo.png' %}" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item ">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item nav-active">Learning & Assessment Events</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link m-2 menu-item">Partners</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      <div class="container">
+          <!-- Top banner -->
+          <div class="top-wrapper top-img-container">
+            <img src="{% static 'img/library-bg.jpg' %}" class="w-100 overlay-1" alt="">
+              <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt="">
+            <div class="main-wrapper text-white px-5 py-5 d-flex flex-column justify-content-center">
+                <div>
+                <h1 class="fw-bold extra">Events</h1>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Tree -->
+        <div class="tree py-4 px-5 shadow">
+            <div class="d-flex flex-row">
+                <div class="tree-element">
+                    <span>>></span><p class="d-inline">Home</p>
+                </div>
+
+                <div class="tree-element mx-3">
+                    <span>>></span><p class="d-inline">Live Events</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="live-event p-5">
+            <div class="live-event-wrapper row">
+                <div class="col-8">
+                    <div class="live-event-wrapper">
+                        <div class="c-video shadow">
+                            <video class="video rounded" src="{% static 'video/video.mp4' %}"></video>
+                            <div class="controls d-flex justify-content-center align-items-center">
+                                <div class="buttons d-flex">
+                                    <div class='grey'>
+                                        <button class="bg-dark volume-btn border-start p-2 px-3"><i class="fas fa-volume-up"></i></button>
+                                    </div>
+                                    <div class="volume-options hidden bg-dark">
+                                        <input type="range" class=" bg-dark volume rounded-end volume-value" min="0" max="100" >    
+                                    </div>
+                                    <div >
+                                        <button class="mute bg-dark no-border-radius p-2 px-3 mute"><i class="fas fa-volume-mute"></i></button>
+                                    </div>
+                                    <div >
+                                        <button class="mute bg-dark no-border-radius p-2 px-3 play" data-state="pause"><i class="fas fa-play"></i></button>
+                                    </div>
+                                    
+                                    <div >
+                                        <button class="back bg-dark no-border-radius p-2 px-3 backplay"><i class="fas fa-backward"></i></button>
+                                    </div>
+                                    <div >
+                                        <button class="full-screen bg-dark border-end p-2 px-3 full-screen"><i class="fas fa-expand"></i></button>
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-description py-5">
+                        <div class="event-desc-wrapper">
+                            <div class="badges d-flex">
+                                <div class="p-2">
+                                    <p class="d-inline">LIVE NOW</p>
+                                    <i class="fas fa-record-vinyl px-2 red"></i>
+                                </div>
+                                <div class="p-2 border-left green h5">
+                                    <i class="fas fa-user-friends px-2"></i>
+                                    <p class="d-inline">212</p>
+                                </div>
+                            </div>
+                            <div class="event-title py-3">
+                                <h1 class="text-secondary">Jira & Microsoft Office Project Expert</h1>
+                            </div>
+                            <div class="event-presenters d-flex py-3 px-2">
+                                <div class="presenter px-3">
+                                    <img src="{% static 'img/presenter.png' %}" alt="">
+                                    <p class="d-inline text-secondary h5">Justus Aiyela</p>
+                                </div>
+                                <div class="presenter px-3 border-left">
+                                    <img src="{% static 'img/presenter.png' %}" alt="">
+                                    <p class="d-inline text-secondary h5">Justus Aiyela</p>
+                                </div>
+
+                            </div>
+                            <div class="event-desc-text py-3 px-2">
+                                <p class="fw-bold lh-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio explicabo quos minus, ullam alias assumenda? Incidunt magnam perferendis, iste sint recusandae molestiae accusantium neque et dicta, eum similique aspernatur ipsum asperiores exercitationem ab, pariatur facilis nobis fuga. Harum esse repellat fugit aliquid atque! Rerum libero neque laudantium maiores, delectus ut nulla aut, assumenda ipsa beatae ratione? Delectus, excepturi ipsam nam inventore corrupti eveniet beatae temporibus maxime molestiae velit voluptate expedita non iste nostrum cum quas numquam repellendus voluptatibus laudantium officiis sapiente distinctio. Rerum cupiditate laudantium iure minima ipsam veniam repellat vel exercitationem? Reprehenderit et voluptate rem sint eum odit iusto!</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-4">
+                    <div class="live-chat-wrappper p-5">
+                        <div class="live-chat-wrapper-2 p-2 bg-white">
+                            <div class="live-chat p-4">
+                                <div class="live-chat-header row">
+                                    <div class="col nav-active h4">
+                                        <i class="fas fa-comment-alt"></i>
+                                        <p class="d-inline px-2">Live Chat</p>
+                                    </div>
+                                    <div class="col green h5">
+                                        <i class="fas fa-user-friends px-2"></i>
+                                        <p class="d-inline">212</p>
+                                    </div>
+
+                                </div>
+                                <div class="live-chat-body py-4">
+                                    <div class="message py-2 my-4 row rounded">
+                                        <div class="col-2">
+                                            <img src="{% static 'img/presenter.png' %}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <p class="d-inline">Daniel James</p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-secondary pr-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex!</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-1">12:41</div>
+                                    </div>
+                                    <div class="message py-2 my-4 row rounded">
+                                        <div class="col-2">
+                                            <img src="{% static 'img/presenter.png' %}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <p class="d-inline">Daniel James</p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-secondary pr-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex!</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-1">12:41</div>
+                                    </div>
+                                    <div class="message py-2 my-4 row rounded">
+                                        <div class="col-2">
+                                            <img src="{% static 'img/presenter.png' %}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <p class="d-inline">Daniel James</p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-secondary pr-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex!</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-1">12:41</div>
+                                    </div>
+                                    <div class="message py-2 my-4 row rounded">
+                                        <div class="col-2">
+                                            <img src="{% static 'img/presenter.png' %}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <p class="d-inline">Daniel James</p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-secondary pr-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex!</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-1">12:41</div>
+                                    </div>
+                                    <div class="message py-2 my-4 row rounded">
+                                        <div class="col-2">
+                                            <img src="{% static 'img/presenter.png' %}" alt="">
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="row">
+                                                <p class="d-inline">Daniel James</p>
+                                            </div>
+                                            <div class="row">
+                                                <p class="text-secondary pr-0">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, ex!</p>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="col-1">12:41</div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="sessions p-5">
+            <div class="sessions-wrapper">
+                <div class="heading-wrapper">
+                    <h2 class="nav-active text-center">Upcoming Live Sessions</h2>
+                </div>
+                <div class="sessions-content d-flex justify-content-center my-5">
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-1.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Agile project Management + Jira Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$599</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-2.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Data Analysis With Microsoft Office Excel Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-2.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Data Analysis With Microsoft Office Excel Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sessions-content d-flex justify-content-center my-5">
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-3.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Lean Six Sigma Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$599</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-2.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Data Analysis With Microsoft Office Excel Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="session p-3 shadow rounded-3 mx-2">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="{% static 'img/session-2.png' %}" class="session-img w-100" alt="">
+                            </div>
+                            
+                            <div class="col-7">
+                                <div class="row session-title-holder"><p class="session-title px-0">Data Analysis With Microsoft Office Excel Crash Course</p></div>
+                                <div class="row session-about-holder py-2">
+                                    <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
+                                    <div class="row">
+                                        <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
+                                        <div class="col-8 review-holder">
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                            <i class="rating__star far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
+                                    <div class="row">
+                                        <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
+                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+
+        
+      </div>
+      {% include 'learning/footer.html' %}
+      <script>
+          document.querySelector(".video").mute=false
+        $(".full-screen").on("click",function(){
+            document.querySelector(".video").requestFullscreen()
+        })
+        $(".mute").on("click",function(){
+            document.querySelector(".video").muted=true
+        })
+        $(".volume-value").on("change",function(){
+            var volume= parseInt(this.value)/100
+            document.querySelector(".video").volume=volume
+        })
+        $(".play").on("click",function(){
+            if( this.dataset.state == "pause"){
+                $(".video")[0].play()
+                this.innerHTML='<i class="fas fa-pause"></i>'
+                this.dataset.state="play"
+            }
+            else{
+                $(".video")[0].pause()
+                this.innerHTML='<i class="fas fa-play"></i>'
+                this.dataset.state="pause"
+            }
+            
+        })
+        $(".backplay").on("click",function(){
+            v=document.querySelector(".video")
+            v.currentTime = v.currentTime -5 
+        })
+        $(".volume-btn").on("click",function(){
+            target=document.querySelector(".volume-options")
+            console.log(target)
+            if( $(target).css("visibility")  == "hidden" ){
+                
+                $(".volume-options").removeClass("hidden")
+                $(".volume-options").addClass("visible")
+            }
+            else{
+                
+                $(".volume-options").removeClass("visible")
+                $(".volume-options").addClass("hidden")
+            }
+        })
+        $(".video").mouseover(function(){
+            $(".buttons").css("visibility","visible")
+              
+        })
+        $(".video").mouseleave(function(){
+              
+                $(".buttons").css("visibility","hidden")
+                $(".volume-options").removeClass("visible")
+                $(".volume-options").addClass("hidden")
+              
+        })
+        $(".buttons").mouseover(function(){
+            $(".buttons").css("visibility","visible")
+              
+        })
+        
+        
+    </script>
+</body>
+</html>

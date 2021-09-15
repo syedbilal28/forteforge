@@ -261,3 +261,66 @@ footer{
 .underlined{
     border-bottom: 1px solid #666;
 }
+.video{
+    width: 100%;
+}
+.c-video{
+    width: 100%;
+    
+    position: relative;
+}
+
+.visible{
+    
+    width: 160px;
+    transition: 1s;
+    visibility:visible;
+}
+.hidden{
+    visibility: hidden;
+    width: 0px;
+    transition: 1s;
+}
+.controls{
+    
+    position: absolute;
+    /* margin-bottom: 50px; */
+    /* height: 100px; */
+    bottom: 50px;
+    width: 100%;
+    
+}
+.buttons{
+    visibility: hidden;
+    position: absolute;
+    /* bottom: 40px; */
+}
+
+.no-border-radius{
+    border-radius: 0px;
+}
+.border-start{
+    border-radius: .25rem 0px 0px .25rem;
+}
+.border-end{
+    border-radius: 0px .25rem .25rem 0px;
+}
+input[type=range] {
+    margin-top: 10px;
+    -webkit-appearance: none;
+    background-color: white;
+    width: 150px;
+    height:20px;
+}
+input[type="range"]::-webkit-slider-thumb {
+-webkit-appearance: circle;
+background-color: white;
+opacity: 1;
+width: 5px;
+height: 26px;
+}
+.bg-dark{
+background-color: rgba(43,43,43,0.5) !important;
+color: white;
+border: none;
+}
