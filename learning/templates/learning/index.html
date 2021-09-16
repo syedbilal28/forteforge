@@ -8,44 +8,45 @@
     {% include "learning/links.html" %}
     <title>Forte Forge</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .no-style{
+            color: black;
+        }
+        .no-style:hover{
+            color:#FF5656;
+            text-decoration: none;
+            transition: 0.1s;
+        }
+        .top-btn{
+            background-color: #FF5656;
+            color: white;
+            border: none;
+        }
+        .top-btn:hover{
+            background-color: white;
+            color: #FF5656;
+        border: none;
+        transition: 0.2s;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid p-3">
-          <img src="{% static 'img/fortthlogo.png' %}" alt="">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-            <ul class="navbar-nav ml-auto flex-nowrap">
-                <li class="nav-item">
-                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item nav-active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item">Learning & Assessment Events</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Partners</a>
-                </li>
-            </ul>
-        </div>
-        </div>
-      </nav>
+    {% include 'learning/header.html' %}
       <div class="container">
           <!-- Top banner -->
           <div class="top-wrapper mt-5 px-5">
               <div class="row w-50 pt-5 py-3">
-                <h1>LEARNING & OUTSOURCING PLATFORM HELPING YOU BE COMPETENT AND VALUED, <span class="nav-active">LIFELONG</span></h1>
+                <h1>PLATFORM CONNECTING LEARNERS, EDUCATORS, AND ENTERPRISES THROUGH EVENTS AND INFASTRUCTURE GUARANTEEING COMPETENCE AND COMMUNITY,<span class="nav-active">LIFELONG</span></h1>
               </div>
               <div class="row">
                   <div class="col"></div>
-                  <div class="col">
-                    <p class="w-75 h5">
-                        Connecting Learners, Educators and Enterprise through technology and infastructure guaranteeing competence and work, lifelong.
-                    </p>
+                  <div class="col d-flex justify-content-center align-items-center">
+                    <div class="mx-2">
+                        <button class="btn btn-primary py-4 px-4 top-btn"><span class="h4">Join Our Talent Network</span></button>
+                    </div>
+                    <div class="mx-2">
+                        <button class="btn btn-primary py-4 px-4 top-btn"><span class="h4">Hire Competent Talent</span></button>
+                    </div>
                   </div>
                 
               </div>
@@ -64,7 +65,9 @@
                     <div class="row">
                         <img src="{% static 'img/finance.png' %}" class="course-img" alt="">
                     </div>
-                    <div class="row w-50"><p class="course-name py-2 h5">FINANCE AND INSURANCE</p></div>
+                    <a href="/courses/industry/specific/#finance-and-insurance" class="no-style">
+                        <div class="row w-50"><p class="course-name py-2 h5">FINANCE AND INSURANCE</p></div>
+                    </a>
 
                 </div>
                 <div class="course p-3">
@@ -77,25 +80,33 @@
                     <div class="row">
                         <img src="{% static 'img/contracting.png' %}" class="course-img" alt="">
                     </div>
-                    <div class="row w-50"><p class="course-name py-2 h5">GENERAL CONTRACTING</p></div>
+                    <a href="/courses/industry/specific/#general-contracting" class="no-style">
+                        <div class="row w-50"><p class="course-name py-2 h5">GENERAL CONTRACTING</p></div>
+                    </a>
                 </div>
                 <div class="course p-3">
                     <div class="row">
                         <img src="{% static 'img/healthcare.jpg' %}" class="course-img" alt="">
                     </div>
-                    <div class="row w-50"><p class="course-name py-2 h5">HEALTHCARE AND HEALTH INFORMATICS</p></div>
+                    <a href="/courses/industry/specific/#healthcare-and-informatics" class="no-style">
+                        <div class="row w-50"><p class="course-name py-2 h5">HEALTHCARE AND HEALTH INFORMATICS</p></div>
+                    </a>
                 </div>
                 <div class="course p-3">
                     <div class="row">
                         <img src="{% static 'img/manufacturing.jpg' %}" class="course-img" alt="">
                     </div>
-                    <div class="row w-50"><p class="course-name py-2 h5">MANUFACTURING</p></div>
+                    <a href="/courses/industry/specific/#manufacturing" class="no-style">
+                        <div class="row w-50"><p class="course-name py-2 h5">MANUFACTURING</p></div>
+                    </a>
                 </div>
                 <div class="course p-3">
                     <div class="row">
                         <img src="{% static 'img/supply.jpg' %}" class="course-img" alt="">
                     </div>
-                    <div class="row w-50"><p class="course-name py-2 h5">SUPPLY CHAIN AND LOGISTICS</p></div>
+                    <a href="/courses/industry/specific/#supplychain-and-logistics" class="no-style">
+                        <div class="row w-50"><p class="course-name py-2 h5">SUPPLY CHAIN AND LOGISTICS</p></div>
+                    </a>
                 </div>
 
             </div>

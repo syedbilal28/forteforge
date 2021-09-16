@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% include "learning/links.html" %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Course</title>
+    <title>Live Events</title>
     <style>
         @font-face {
             font-family: Gilroy;
@@ -87,30 +87,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid p-3">
-          <img src="{% static 'img/fortthlogo.png' %}" alt="">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
-            <ul class="navbar-nav ml-auto flex-nowrap">
-                <li class="nav-item">
-                    <a href="{% url 'index' %}" class="nav-link m-2 menu-item ">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'Events' %}" class="nav-link m-2 menu-item nav-active">Learning & Assessment Events</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Enterprise</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link m-2 menu-item">Partners</a>
-                </li>
-            </ul>
-        </div>
-        </div>
-      </nav>
+    {% include 'learning/header.html' %}
       <div class="container">
           <!-- Top banner -->
           <div class="top-wrapper top-img-container">

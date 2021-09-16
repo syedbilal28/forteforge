@@ -1,0 +1,628 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "learning/links.html" %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Live Events</title>
+    <style>
+        .main-wrapper{
+            height: 100%;
+        }
+        .specific-course-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+        .specific-course{
+            position: relative;
+            min-width: 400px;
+            min-height: 250px;
+            border-radius: 0.5rem;
+        }
+        .overlay-small{
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            border-radius: 0.5rem;
+            /* width: 100vw !important; */
+            height: 100%;
+            
+        }
+        .overlay-small-1{
+            position: absolute;
+            z-index: -2;
+            border-radius: 0.5rem;
+            width: 100% !important;
+            height: 100%;
+        }
+        .specific-courses{
+            font-family: Gilroy;
+            min-width: 100vw;
+            border-bottom: 1px solid #ccc;
+        }
+        .more-courses{
+            min-width: 100vw;
+            font-family: Gilroy;
+        }
+    </style>
+</head>
+<body>
+    {% include 'learning/header.html' %}
+      <div class="container">
+            <!-- Top banner -->
+            <div class="top-wrapper top-img-container">
+                <img src="{% static 'img/library-bg.jpg' %}" class="w-100 overlay-1" alt="">
+                  <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt="">
+                <div class="main-wrapper text-white px-5 py-5 d-flex flex-column justify-content-center">
+                    <div>
+                    <h1 class="fw-bold extra">Inudstry Specific Courses</h1>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Tree -->
+        <div class="tree py-4 px-5 shadow">
+            <div class="d-flex flex-row">
+                <div class="tree-element">
+                    <span>>></span><p class="d-inline">Home</p>
+                </div>
+
+                <div class="tree-element mx-3">
+                    <span>>></span><p class="d-inline">Industry Specific Courses</p>
+                </div>
+                
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="general-contracting">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">GENERAL CONTRACTING</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Construction Manager</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">NCARB Licenses Architect</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Journeyman, Expert, Master Electricals</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Journeyman, Expert, Master Plumber</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">HVAC TSSA & OCOT Licenses</p>
+                            </div>
+                            
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="finance-and-insurance">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">FINANCE AND INSURANCE</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CPA</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">QAFP</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CFP</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CFA</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Insurance Underwriter</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Garp Financial Risk Manager</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="finance-and-insurance">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">HEALTHCARE AND CLINICAL INFORMATICS</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">NCLEX-RN</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">EPIC</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Meditect</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Cerner</p>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="supplychain-and-logistics">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">SUPPLY CHAIN AND LOGISTICS</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CSCP</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CPIM</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CPSM</p>
+                            </div>
+
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="finance-and-insurance">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">FINANCE AND INSURANCE</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CPA</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">QAFP</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CFP</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CFA</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Insurance Underwriter</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Garp Financial Risk Manager</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="telecommunication">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">TELECOMMUNICATION</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Cisco certified network associate</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Cisco certified network professional</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Construction Manager</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CWA: Certified Wireless Analyst.</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CTA: 
+                                    (Certified Telecommunications Analyst).</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CIPTS: 
+                                    Certified IP Telecom Network Specialist.</p>
+                            </div>
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">CTNS: 
+                                    Certified Telecommunications
+                                     Network Specialist</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">iNarte Certified 
+                                    Telecommunications Engineers
+                                    </p>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="specific-courses p-5" id="manufacturing">
+            <div class="specific-courses-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="course-container p-5">
+                    <div class="course-header">
+                        <h4 class="mx-4">MANUFACTURING</h4>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Quality Engineer</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Automation Professional</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Manufacturing Associate</p>
+                            </div>
+
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Manufacturing Specialist</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Manufacturing Engineer</p>
+                            </div>
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Production Technician</p>
+                            </div>
+                        </div>
+                        <div class="course-flex d-flex py-4">
+                            <div class="specific-course mx-4">
+                                <img src="{% static 'img/general-contracting.png' %}" class="specific-course-img overlay-small-1" alt="">
+                                <img src="{% static 'img/Rectangle-black.png' %}" class="overlay-small" alt="">
+                                <p class="text-white specific-course-text text-center">Certified Additive Manufacturing Technician</p>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-courses">
+            <div class="course-handler d-flex my-4 p-3">
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+                <div class="more-course p-3">
+                    <div class="row">
+                        <img src="{% static 'img/more-course.png' %}" class="more-course-img" alt="">
+                    </div>
+                    <div class="row more-course-desc">
+                        
+                        <div class="col px-4">
+                            <img src="{% static 'img/instructor.jpg' %}" class="rounded-circle more-instructor-img neg-margin" alt="">
+                        </div>
+                        <div class="col text-right">
+                            <div class="row"><span class="nav-active">Justus Aiyela</span></div>
+                            <div class="d-flex flex-row-reverse nav-active">
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row more-course-title text-center py-2">
+                        <p><strong>AGILE PRODUCT MANAGEMENT-ADVANCED</strong></p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+      </div>
+      {% include 'learning/footer.html' %}
+</body>
+</html>
