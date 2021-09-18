@@ -28,6 +28,27 @@
         border: none;
         transition: 0.2s;
         }
+        .category{
+            background-color: #DEFFFC;
+            border-radius: 1rem;
+            border: none !important;
+            color: black;
+            font-weight: 500;
+            min-width: 300px;
+            max-width: 300px;
+            min-height: 350px;
+        }
+        .category:hover{
+            cursor: pointer;
+            background-color: #FF5656;
+            border: none !important;
+            color: #EBF2FA;
+            transition: 0.2s;
+
+        }
+        .hidden-desc{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -117,9 +138,37 @@
           </div>
 
           <!-- Categories section -->
-          <div class="categories p-5 my-5">
-              <div class="categories-wrapper d-flex flex-column px-5">
-                <div class="row category my-4">
+          <div class="categories d-flex justify-content-center p-5 my-5">
+              <div class="categories-wrapper d-flex px-5">
+                <div class="category mx-5 p-5 text-center border d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="h2 category-title">For Students</p>
+                    </div>
+                    <div class="hidden-desc ">
+                        <i class="fas fa-graduation-cap h2 py-3"></i>
+                        <p class="h5 category-desc">Learn, Network, Benefits.</p>
+                    </div>
+                </div>
+                <div class="category mx-5 p-5 text-center border d-flex justify-content-center align-items-center">
+                    <div>
+                        <p class="h2 category-title">For Enterprises</p>
+                    </div>
+                    <div class="hidden-desc">
+                        <i class="fas fa-user-tie h2 py-3"></i>
+                        <p class="h5 category-desc">Learn, Teach, Network, Benefits.</p>
+                    </div>
+                </div>
+                <div class="category mx-5 p-5 text-center border d-flex justify-content-center align-items-center">
+                    <div>
+                        
+                        <p class="h2 category-title visible">For Partners</p>
+                    </div>
+                    <div class="hidden-desc">
+                        <i class="fas fa-handshake h2 py-3"></i>
+                        <p class="h5 category-desc">Teach, Deliver Services, Product Partnerships, Mentorships & Volunteering.</p>
+                    </div>
+                </div>
+                <!-- <div class="row category my-4">
 
                     <div class="col-5 p-5">
                         <p class="h2 category-title">FOR STUDENTS</p>
@@ -154,7 +203,7 @@
                     <div class="col-6 p-5 text-center">
                         <p class="h5 catgory-desc">Teach, Deliver Services, Product Partnerships, Mentorships & Volunteering.</p>
                     </div>
-                </div>
+                </div> -->
 
               </div>    
           </div>
@@ -308,6 +357,26 @@
       </div>
       {% include "learning/footer.html" %}
         <script>
+            $(".category").mouseover(function(){
+                
+                target=this.children[0]
+                $(target).css("display","none")
+                // $(target).addClass("hidden")
+                target=this.children[1]
+                $(target).css("display","block")
+
+
+            })
+            $(".category").mouseleave(function(){
+                
+                target=this.children[1]
+                // $(target).addClass("hidden")
+                $(target).css("display","none")
+                target=this.children[0]
+                $(target).css('display',"block")
+                // $(target).removeClass("hidden")
+
+            })
             function ScrollDown(){
                 window.scrollBy(0, window.innerHeight);
             }
