@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% include 'learning/links.html' %}
+    <title>Details</title>
+    <style>
+        /* body{
+            font-size: 14px !important;
+        } */
+        .small{
+            font-size: 15px;
+        }
+        .blue-bg{
+            background-color: #384651;
+        }
+        .small-img{
+            max-width: 30px;
+        }
+        .blue{
+            color: #384651;
+        }
+        .border-blue{
+            border: 1.5px solid #384651;
+        }
+        .details-tree-content{
+            position: relative;
+            height: 100%;
+        }
+        .details-tree-content>p{
+            position: absolute;
+            bottom: 0px;
+        }
+        .dummy{
+            min-height: 30px;
+            width: 0px;
+            border: 1px solid #384651;
+        }
+        .x-small{
+            font-size: 14px;
+        }
+        .session-details{
+            min-width: 100vw;
+        }
+        .btn-prev{
+            left: auto !important;
+            right: 50px !important;
+        }
+        .month{
+            max-width: 50px;
+            /* display: inline !important; */
+        }
+        .simple-calendar-btn{
+            border-radius: 10px !important;
+            background-color: #384651;
+            border: 2px solid #384651 !important;
+            color: white;
+        }
+        .simple-calendar-btn:hover{
+            background-color: #2a343c !important;
+            border: 2px solid #2a343c !important;
+        }
+        .calendar>table{
+            font-size: 13px;
+            background-color: #EBEBEB;
+            border-radius: 1rem !important ;        
+        }
+    
+        .calendar td{
+            padding:0px !important;
+        }
+        .calendar-wrapper{
+            border-bottom: 1px solid #FE5555;
+        }
+        .continue-btn{
+            background-color: #FE5555;
+            border: none;
+        }
+        .continue-btn:hover{
+            background-color: white;
+            color: #FE5555;
+            border: none;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    {% include 'learning/header.html' %}
+    <div class="container">
+        <!-- Top banner -->
+        <div class="top-wrapper top-img-container">
+            <img src="{% static 'img/events-banner.png' %}" class="w-100 overlay-1" alt="">
+              <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt="">
+              <div class="main-wrapper text-white px-5 py-5 d-flex flex-column justify-content-center h-100">
+                <div>
+                <h1 class="fw-bold extra">Events</h1>
+                </div>
+                
+            </div>
+            
+        </div>
+        <!-- Tree -->
+        <div class="tree py-4 px-5 shadow">
+            <div class="d-flex flex-row">
+                <div class="tree-element">
+                    <span>>></span><p class="d-inline">Home</p>
+                </div>
+
+                <div class="tree-element mx-3">
+                    <span>>></span><p class="d-inline">Live Events</p>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Session Details -->
+        <div class="session-details p-5 row">
+            <div class="col-4 ">
+                <div class="details-wrapper shadow rounded py-1">
+                    <div class="details-header blue-bg shadow text-white my-5 mx-4 rounded p-5 d-flex flex-column justify-content-center align-items-center">
+                        <div class="py-2 h6 text-center">
+                            <p>Jira & Microsoft Office Expert</p>
+                        </div>
+                        <div class="event-presenters d-flex py-2 px-2 border-top">
+                            <div class="presenter px-3">
+                                <img src="{% static 'img/presenter.png' %}" class="small-img" alt="">
+                                
+                            </div>
+                            <div class="presenter px-3 ">
+                                <img src="{% static 'img/presenter.png' %}" class="small-img" alt="">
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="details-tree my-5 mx-2 rounded p-5 blue">
+                        <div class="detail">
+                            <div class="detail-holder row">
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-file-alt rounded border-blue p-3"></i>
+                                </div>
+                                <div class="col-8 ">
+                                    <div class="details-tree-content">
+                                        
+                                            <p class="h7 small">Choose Course</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-holder row py-3">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <div class="dummy">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="detail">
+                            <div class="detail-holder row">
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-bars rounded border-blue p-3"></i>
+                                </div>
+                                <div class="col-8 ">
+                                    <div class="details-tree-content">
+                                        
+                                            <p class="h7 small">Session details</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-holder row py-3">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <div class="dummy">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="detail">
+                            <div class="detail-holder row">
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-wallet rounded border-blue p-3"></i>
+                                </div>
+                                <div class="col-8 ">
+                                    <div class="details-tree-content">
+                                        
+                                            <p class="h7 small">Payment</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vertical-holder row py-3">
+                                <div class="col-4 d-flex justify-content-center align-items-center">
+                                    <div class="dummy">
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="detail">
+                            <div class="detail-holder row">
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-check rounded border-blue p-3"></i>
+                                </div>
+                                <div class="col-8 ">
+                                    <div class="details-tree-content">
+                                        
+                                            <p class="h7 small">Confirmation</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <button class="btn btn-light w-100 my-5 px-4 py-2">Having trouble?<br> Get help</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="content-wrapper py-1">
+                    <div class="header">
+                        <h3 class="nav-active">Session Details</h3>
+                        <p class="x-small">Book session you wish to schedule now and save remaining for later.</p>
+                    </div>
+                    <div class="session row py-2 px-2 shadow">
+                        <div class="col-2">
+                            <img src="{% static 'img/session-2.png' %}" class="w-100" alt="">
+                        </div>
+                        <div class="col-10 d-flex flex-column justify-content-center">
+                            <div>
+                                <p class="my-1 h5">1 session (30 mins)</p>
+                                <p class="small">Jira masterclass</p>
+                                <a class="x-small nav-active">Change</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calendar-wrapper my-3 row">
+                        <div class="col">
+                            <div class="calendar-holder">
+
+                            </div>
+                        </div>
+                        <div class="col px-5">
+                            <div class="timezone blue">
+                                <i class="fas fa-globe mx-2"></i>
+                                <p class="d-inline">(GMT 01:00) Africa, Lagos (2:09 AM)</p>
+                            </div>
+                            <div class="slot my-4 d-flex flex-column align-items-end justify-content-start py-5 px-4 rounded shadow">
+                                <div class="p-1">
+                                    <h4 class="nav-active">No slots available</h4>
+                                    <p>Looks like the course has no availability for this date or duration, please try to choose a lesser duration to see more available slots.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btns-row my-2 row mx-3">
+                        <div class="col">
+                            <a href="">Previous</a>
+                        </div>
+                        <div class="col text-right">
+                            <button class="btn btn-primary continue-btn">Continue<i class="fas fa-arrow-right ml-3 py-2 px-2"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    {% include 'learning/footer.html' %}
+</body>
+<script>
+    $(function(){
+      $(".calendar-holder").simpleCalendar();
+      $(".day").on("click",function(e){
+        e.preventDefault()
+        
+        WipeToday()
+        $(this).addClass("today")
+    })
+    });
+    function WipeToday(){
+        $(".day").removeClass("today")
+    }
+</script>
+</html>

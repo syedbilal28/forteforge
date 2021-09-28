@@ -69,3 +69,6 @@ def CurrentLiveEvent(request):
 
 def IndustrySpecificCourses(request):
     return render(request,"learning/industry-specific-courses.html")
+
+def EventDetails(request):
+    return render(request,"learning/event-details.html")
