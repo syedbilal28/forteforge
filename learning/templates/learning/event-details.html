@@ -125,7 +125,7 @@
             border: 1px solid #FE5555;
             transition: 0.2s;
         }
-        .discount-input::placeholder{
+        .discount-input::placeholder,.card-input::placeholder{
             color: white;
             opacity: 1;
         }
@@ -134,6 +134,28 @@
         }
         .bg-dark{
             background-color: #131619 !important;
+        }
+        .w-20{
+            width: 20% !important;
+        }
+        .card-input{
+            border: none;
+            min-height: 40px;
+        }
+        .w-60{
+            width: 60% !important;
+        }
+        .w-15{
+            width: 15% !important;
+        }
+        .paypal{
+            background-color: #384651;
+            border: none;
+        }
+        .paypal:hover{
+            background-color: #2a343c;
+            border: none;
+            transition: 0.2s;
         }
     </style>
 </head>
@@ -232,8 +254,8 @@
                         </div>
                         <div class="detail">
                             <div class="detail-holder row">
-                                <div class="col-4 text-center payment">
-                                    <i class="fas fa-wallet rounded border-blue p-3"></i>
+                                <div class="col-4 text-center">
+                                    <i class="fas fa-wallet rounded border-blue p-3 payment"></i>
                                 </div>
                                 <div class="col-8 ">
                                     <div class="details-tree-content">
@@ -277,7 +299,7 @@
                         <h3 class="nav-active">Session Details</h3>
                         <p class="x-small session-description">Book session you wish to schedule now and save remaining for later.</p>
                     </div>
-                    <!-- <div class="session row py-2 px-2 shadow">
+                    <div class="session row py-2 px-2 shadow">
                         <div class="col-2">
                             <img src="{% static 'img/session-2.png' %}" class="w-100" alt="">
                         </div>
@@ -288,32 +310,50 @@
                                 <a class="x-small nav-active">Change</a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="calendar-wrapper my-3 row">
                         <div class="col">
-                            <!-- <div class="calendar-holder">
+                            <div class="calendar-holder">
 
-                            </div> -->
-                            <p class="m-0 text-secondary">PAYMENT METHODS</p>
-                            <div class="payment-options d-flex flex-column">
-                                <div class="payment-optn p-2 py-3 my-2 rounded shadow">
-                                    <input type="radio" class="payment-btn" name="payment" value="debit">
-                                    <i class="fas fa-credit-card h5 mx-2"></i>
-                                    <p class="d-inline mx-1">Credit or Debit Card</p>
-                                </div>
-                                <div class="payment-optn p-2 py-3 my-2 rounded shadow">
-                                    <input type="radio" class="payment-btn" name="payment" value="paypal">
-                                    <i class="fab fa-paypal h5 mx-2"></i>
-                                    <p class="d-inline mx-1">Paypal</p>
-                                </div>
                             </div>
+                            <!-- <p class="m-0 text-secondary">PAYMENT METHODS</p>
+                            <div class="payment-options d-flex flex-column">
+                                <div class="payment-optn row p-2 py-3 my-2 rounded shadow">
+                                    <div class="col-1">
+                                        <input type="radio" class="payment-btn" name="payment" value="debit">
+                                    </div>
+                                    <div class="col-11">
+                                        <i class="fas fa-credit-card h5 mx-2"></i>
+                                        <p class="d-inline mx-1">Credit or Debit Card</p>
+                                        <div class="my-2 bg-secondary rounded d-none">
+                                            <input type="text" class="w-60 p-2 bg-secondary d-inline rounded card-input" placeholder="Card Number">
+                                            <input type="month" class="w-15 d-inline bg-secondary rounded date-input card-input" placeholder="mm/yy">
+                                            <input type="text" maxlength="3" class="w-20 d-inline bg-secondary rounded cvc-input card-input" placeholder="CVC">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="payment-optn row p-2 py-3 my-2 rounded shadow">
+                                    <div class="col-1">
+                                        <input type="radio" class="payment-btn" name="payment" value="paypal">
+                                    </div>
+                                    <div class="col-11">
+                                        <i class="fab fa-paypal h5 mx-2"></i>
+                                        <p class="d-inline mx-1">Paypal</p>
+                                        <div class="d-none">
+                                            <button class="btn btn-primary paypal w-100">Paypal</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div> -->
                         </div>
                         <div class="col px-5">
-                            <!-- <div class="timezone blue">
+                            <div class="timezone blue">
                                 <i class="fas fa-globe mx-2"></i>
                                 <p class="d-inline">(GMT 01:00) Africa, Lagos (2:09 AM)</p>
-                            </div> -->
-                            <!-- <div class="slot-wrapper d-flex flex-column my-2 ">
+                            </div>
+                            <div class="slot-wrapper d-flex flex-column my-2 ">
                                 <div class="slot my-4 d-flex flex-column align-items-end justify-content-start py-5 px-4 rounded shadow">
                                     <div class="p-1">
                                         <h4 class="nav-active">No slots available</h4>
@@ -321,8 +361,8 @@
                                     </div>
                                 </div>
                                 
-                            </div> -->
-                            <div class="checkout my-5 p-3 px-5 bg-dark rounded">
+                            </div>
+                            <!-- <div class="checkout my-5 p-3 px-5 bg-dark rounded">
                                 <div class="row rounded bg-white my-2 py-2">
                                     <div class="col-3">
                                         <img src="{% static 'img/session-2.png' %}" class="w-100" alt="">
@@ -362,7 +402,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="btns-row my-2 row mx-3">
@@ -469,21 +509,94 @@
                                 </div>`
         })
         $(".save-session").on("click",function(){
-            var target= document.querySelector(".calendar-wrapper").children[0]
-            target.innerHTML=`<p class="m-0 text-secondary">PAYMENT METHODS</p>
-                            <div class="payment-options d-flex flex-column">
-                                <div class="payment-optn p-2 py-3 my-2 rounded shadow">
-                                    <input type="radio" class="payment-btn" name="payment" value="debit">
-                                    <i class="fas fa-credit-card h5 mx-2"></i>
-                                    <p class="d-inline mx-1">Credit or Debit Card</p>
+            $(".session").remove()
+            var first_target= document.querySelector(".calendar-wrapper").children[0]
+            first_target.innerHTML=`<p class="m-0 text-secondary">PAYMENT METHODS</p>
+            <div class="payment-options d-flex flex-column">
+                                <div class="payment-optn row p-2 py-3 my-2 rounded shadow">
+                                    <div class="col-1">
+                                        <input type="radio" class="payment-btn" name="payment" value="debit">
+                                    </div>
+                                    <div class="col-11">
+                                        <i class="fas fa-credit-card h5 mx-2"></i>
+                                        <p class="d-inline mx-1">Credit or Debit Card</p>
+                                        <div class="my-2 bg-secondary rounded d-none">
+                                            <input type="text" class="w-60 p-2 bg-secondary d-inline rounded card-input" placeholder="Card Number">
+                                            <input type="month" class="w-15 d-inline bg-secondary rounded date-input card-input" placeholder="mm/yy">
+                                            <input type="text" maxlength="3" class="w-20 d-inline bg-secondary rounded cvc-input card-input" placeholder="CVC">
+                                        </div>
+                                    </div>
+                                    
                                 </div>
-                                <div class="payment-optn p-2 py-3 my-2 rounded shadow">
-                                    <input type="radio" class="payment-btn" name="payment" value="paypal">
-                                    <i class="fab fa-paypal h5 mx-2"></i>
-                                    <p class="d-inline mx-1">Paypal</p>
+                                <div class="payment-optn row p-2 py-3 my-2 rounded shadow">
+                                    <div class="col-1">
+                                        <input type="radio" class="payment-btn" name="payment" value="paypal">
+                                    </div>
+                                    <div class="col-11">
+                                        <i class="fab fa-paypal h5 mx-2"></i>
+                                        <p class="d-inline mx-1">Paypal</p>
+                                        <div class="d-none">
+                                            <button class="btn btn-primary paypal w-100">Paypal</button>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>`
+            var second_target=document.querySelector(".calendar-wrapper").children[1]
+            second_target.innerHTML=`<div class="checkout my-5 p-3 px-5 bg-dark rounded">
+                                <div class="row rounded bg-white my-2 py-2">
+                                    <div class="col-3">
+                                        <img src="{% static 'img/session-2.png' %}" class="w-100" alt="">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="row">
+                                            <p class="mb-1 text-dark">1 hour</p>
+                                        </div>
+                                        <div class="row">
+                                            <p class="m-0 x-small text-dark">1 hour</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-2">
+                                    <div class="col-8 p-0">
+                                        <input type="text" class="form-control bg-secondary discount-input" placeholder="Discount Code" >
+                                    </div>
+                                    <div class="col-4 pr-0">
+                                        <button class="btn btn-outline-danger w-100">Apply</button>
+                                    </div>
+                                </div>
+                                <div class="price-holder my-3 mt-5">
+                                    <div class="row session-price-holder">
+                                        <div class="col">
+                                            <p>Session Price</p>
+                                        </div>
+                                        <div class="col text-right">
+                                            <p class="x-small">$299</p>
+                                        </div>
+                                    </div>
+                                    <div class="row total-amount-holder border-top py-3">
+                                        <div class="col">
+                                            <p>Total Price</p>
+                                        </div>
+                                        <div class="col text-right">
+                                            <p class="h4">$299</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`
+            
+                            $(".payment-btn").on("click",function(){
+        if(this.value == "debit"){
+            var to_work=this.parentNode.nextElementSibling.children[2]
+            $(to_work).removeClass("d-none")
+        }
+        else{
+            var to_work=this.parentNode.nextElementSibling.children[2]
+            $(to_work).removeClass("d-none")
+        }
+    })
         })
+        
         })
         
         function WipeBlueBackground(){
