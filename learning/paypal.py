@@ -4,7 +4,7 @@ def GenerateToken():
     url="https://api-m.sandbox.paypal.com/v1/oauth2/token"
     headers={"Accept":"application/json","Accept-Language":"en_US"}
     data={"grant_type":"client_credentials"}
-    response=requests.post(url,headers=headers,data=data,auth=("AaxRSlM27EvRDp_Thhsc_ws8UM8xnrsYTyvJnzbLlSx9hod9wBJsBACa-eo2ZhIIqfR4f-zq--aV7PsC","EBw9hd2OMRD1mGRV8MBbL8yTYo8djRuAiVJKoM0zc9_49DLFm2RqGStzlspjhuolbA4mNro9DIqrKnbp"))
+    response=requests.post(url,headers=headers,data=data,auth=("AT1WsTqnMe4fUOxccIfT_QC9JIhn5St_kwhSkf4WhgpYkhy8FLLJcWdyySmWbYtncMJ1fTdcPJzHXW50","EBQ90Gh-DpJNlatsyLQeoZ5e-_xbRomNTQ3YOjH_KG9_OOfoVPijHfXH2qF3CXvUgFacDa5Pcz_WVpA-"))
     data=response.json()
     access_token=data['access_token']
     return access_token
@@ -15,7 +15,7 @@ def CreateProduct(access_token,hashed_request_id):
                 'PayPal-Request-Id': hashed_request_id,
             }
             
-    data={"name": "UnoStartup Subscription","type": "SERVICE"}
+    data={"name": "ForteForge Event","type": "DIGITAL"}
     data=json.dumps(data)
     
     response = requests.post('https://api-m.sandbox.paypal.com/v1/catalogs/products',headers=headers,data=data)
@@ -31,7 +31,7 @@ def CreateProduct(access_token,hashed_request_id):
 
     data=response.json()
     return data['id']
-def CreatePlan(access_token,package_price,package_name):
+def CreatePlan(access_token,package_price,product_id,package_name):
     url="https://api-m.sandbox.paypal.com/v1/billing/plans"
     headers={
                 "Accept":"application/json",
@@ -39,8 +39,7 @@ def CreatePlan(access_token,package_price,package_name):
                 'Content-Type': 'application/json',
                 "Prefer":"return=representation"
             }
-    infile=open("paypal_product_id.txt","r") 
-    product_id=infile.read()
+    
     data={
       "product_id":product_id,
       "name": package_name,
@@ -63,7 +62,7 @@ def CreatePlan(access_token,package_price,package_name):
                    "fixed_price": 
                    {
                    "value": f"{package_price}",
-                   "currency_code": "EUR"
+                   "currency_code": "USD"
                    }
                    }
                    }
@@ -97,6 +96,8 @@ def CreatePlan(access_token,package_price,package_name):
       response=response.json()
       return response['id']
       #return "Could not be created"
+
+
 def PauseSubscription(subscription_id,access_token):
     url=f"https://api-m.sandbox.paypal.com/v1/billing/subscriptions/{subscription_id}/suspend"
     headers={
