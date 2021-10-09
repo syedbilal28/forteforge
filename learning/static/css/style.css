@@ -10,7 +10,9 @@
 
 body{
     overflow-x: hidden;
+    font-size: 14px !important;    
 }
+
 .nav-item{
     font-family: Gilroy-Medium;
 }

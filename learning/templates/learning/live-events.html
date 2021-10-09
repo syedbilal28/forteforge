@@ -35,16 +35,17 @@
         }
         .join-btn{
             background-color: white;
-            color: #FF5656;
-            border: none;
+            color: #384651;
+            border: 1px solid #384651;
         }
         .join-btn:hover{
-            background-color: #FF5656;
+            background-color: #384651;
             color: white;
-            border: none;
+            border: 1px solid white;
+            
         }   
         .event-container{
-            background-color: #FF5656;
+            background-color: #384651;
             color: white;
         }
         .events{
@@ -73,7 +74,7 @@
             margin-top: 1rem;
             font-size: 30px;
             display: inline;
-            background-color: #FF5656;
+            background-color: #384651;
             width: 50px;
 
         }
@@ -84,10 +85,104 @@
             font-size: 20px;
             
         }
+        .modal-body{
+            font-family: Gilroy;
+        }
+        .social-btn{
+            background-color: transparent;
+            border: 1px solid #707070 !important;
+        }
+        .facebook{
+            background-color: #1B538A;
+            color: white;
+            border: 1px solid #1B538A !important;
+        }
+        .modal-dialog{
+            max-width: 650px !important;
+        }
+        .modal-input{
+            border: none;
+            border-bottom: 1px solid #707070;
+
+        }
+        .modal-input::placeholder{
+            color: #707070;
+        }
+        .modal-input:focus{
+            outline: none;
+        }
+        .modal-login-btn{
+            background-color: #FF5656;
+            color: white;
+            border: none;
+        }
+        .modal-login-btn:hover{
+            background-color: white;
+            color: #FF5656;
+            transition: 0.3s;
+        }
+        .join-primary{
+            background-color: #384651;
+            border: 1px solid #384651;
+        }
+        .join-primary:hover{
+            border: 1px solid #384651;
+            background-color: white;
+            color: #384651;
+            transition: 0.2s;
+        }
+        .read-more-btn{
+            font-size: 13px;
+        }
+        .sessions-content > div{
+            min-width: 384px;
+        }
+
     </style>
 </head>
 <body>
     {% include 'learning/header.html' %}
+    <div class="modal fade" id="LoginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              <div class="modal-wrapper d-flex flex-column justify-content-center align-items-center px-5">
+                <div class="my-1">
+                    <h1 class="nav-active">Log in to your Account</h1>
+                </div>
+                <div class="px-1 w-75 my-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="my-2 w-100">
+                        <button class="social-btn facebook p-3 w-100 text-left"><i class="fab fa-facebook-f mx-2 text-white"></i>Continue with Facebook</button>
+                    </div>
+                    <div class="my-2 w-100">
+                        <button class="social-btn google w-100 p-3 text-left"><i class="fab fa-google mx-2"></i> Continue with Google</button>
+                    </div>
+                    <div class="my-2 w-100">
+                        <div class="social-btn linkedin w-100 p-3 text-left"><i class="fab fa-linkedin-in mx-2"></i>Continue with Linkedin</div>
+                    </div>
+                    <div class="my-2 mt-3 w-100">
+                        <input type="email" placeholder="Email" class="modal-input px-3 py-2 w-100">
+                    </div>
+                    <div class="my-2 w-100">
+                        <input type="password" placeholder="Password" class="modal-input px-3 py-2 w-100">
+                    </div>
+                    <div class="my-3 w-100">
+                        <button class="modal-login-btn w-100 p-3 text-center">Log in</button>
+                    </div>
+                    <div class="my-2">
+                        <a href="#" class="no-design nav-active fw-bold">Or Forgot Password</a>
+                    </div>
+                    <div class="my-5">
+                        <p>Don't have an account?<span class="signup mx-1">Signup</span></p>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
       <div class="container">
           <!-- Top banner -->
           <div class="top-wrapper top-img-container">
@@ -131,7 +226,7 @@
                                                 <h3 >Jira & Microsoft Office Project Expert</h3>
                                             </div>
                                             <div class="join my-3">
-                                                <a class="btn btn-primary join-btn py-2 px-5" href="{% url 'CurrentLive' %}">Join Now</a>
+                                                <a class="btn btn-primary join-btn join-now py-2 px-5" href="{% url 'CurrentLive' %}">Join Now</a>
                                             </div>
                                         </div>
                                         <div class="col-4">
@@ -222,7 +317,7 @@
                                     </div>
                                 </div>
                                 <div class="row text-center px-5 py-1">
-                                    <button class="btn btn-primary join-primary py-1 px-2">Join Now</button>
+                                    <button class="btn btn-primary join-primary join-now py-1 px-2">Join Now</button>
                                 </div>
                                 
                             </div>
@@ -258,7 +353,7 @@
                                     </div>
                                 </div>
                                 <div class="row text-center px-5 py-1">
-                                    <button class="btn btn-primary join-primary py-1 px-2">Join Now</button>
+                                    <button class="btn btn-primary join-primary join-now py-1 px-2">Join Now</button>
                                 </div>
                                 
                             </div>
@@ -296,7 +391,7 @@
                                     </div>
                                 </div>
                                 <div class="row text-center px-5 py-1">
-                                    <button class="btn btn-primary join-primary py-1 px-2">Join Now</button>
+                                    <button class="btn btn-primary join-primary join-now py-1 px-2">Join Now</button>
                                 </div>
                                 
                             </div>
@@ -332,7 +427,7 @@
                                     </div>
                                 </div>
                                 <div class="row text-center px-5 py-1">
-                                    <button class="btn btn-primary join-primary py-1 px-2">Join Now</button>
+                                    <button class="btn btn-primary join-primary join-now py-1 px-2">Join Now</button>
                                 </div>
                                 
                             </div>
@@ -355,7 +450,7 @@
                             
                             <div class="col-7">
                                 <div class="row session-title-holder"><p class="session-title px-0">Agile project Management + Jira Crash Course</p></div>
-                                <div class="row session-about-holder py-2">
+                                <div class="row session-about-holder pt-2">
                                     <div class="row session-speaker-holder"><p class="session-speaker nav-active p-0 my-1">Justus Aiyela</p></div>
                                     <div class="row">
                                         <div class="col-2 rating-holder p-0"><p class="rating p-0">5.0</p></div>
@@ -372,7 +467,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$599</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -404,7 +499,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -435,7 +530,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -468,7 +563,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$599</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -500,7 +595,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -531,7 +626,7 @@
                                     <div class="row price-holder"><p class="session-price nav-active m-0 p-0">$399</p></div>
                                     <div class="row">
                                         <div class="col terms-holder p-0"><p class="terms p-0 m-0">Terms Apply</p></div>
-                                        <div class="col more-holder"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
+                                        <div class="col more-holder pr-0"><button class="read-more-btn btn btn-primary rounded-pill w-100 ">Read More</button></div>
                                     </div>
                                 </div>
                             </div>
@@ -547,5 +642,11 @@
       </div>
       {% include 'learning/footer.html' %}
      
+      <script>
+          $(".join-now").on("click",function(){
+             
+              $("#LoginModal").modal("show")
+          })
+      </script>
 </body>
 </html>
