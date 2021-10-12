@@ -137,7 +137,13 @@
         .sessions-content > div{
             min-width: 384px;
         }
-
+        .signup:hover{
+            cursor: pointer;
+            color: #FF5656;
+        }
+        .x-small{
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -174,7 +180,7 @@
                         <a href="#" class="no-design nav-active fw-bold">Or Forgot Password</a>
                     </div>
                     <div class="my-5">
-                        <p>Don't have an account?<span class="signup mx-1">Signup</span></p>
+                        <p>Don't have an account?<span class="signup mx-1 fw-bold">Signup</span></p>
                     </div>
                 </div>
               </div>
@@ -646,6 +652,55 @@
           $(".join-now").on("click",function(){
              
               $("#LoginModal").modal("show")
+          })
+          $(".signup").on("click",function(){
+              document.querySelector(".modal-body").innerHTML=`<div class="modal-wrapper d-flex flex-column justify-content-center align-items-center px-5">
+                  <div class="my-1">
+                      <h1 class="nav-active">Create a new Account</h1>
+                  </div>
+                  <div class="px-1 w-75 my-2 d-flex flex-column justify-content-center align-items-center">
+                      <div class="row my-2 mt-3">
+                        <div class="col">
+                            <input type="text" placeholder="First Name" name="first_name" class="modal-input px-3 py-2 w-100">
+                        </div>
+                        <div class="col">
+                            <input type="text" placeholder="Last Name" name="last_name" class="modal-input px-3 py-2 w-100">
+                        </div>
+                      </div>
+                      <div class="my-2 w-100">
+                          <input type="email" placeholder="Email" class="modal-input px-3 py-2 w-100">
+                      </div>
+                      <div class="my-2 w-100">
+                        <input type="text" placeholder="Phone Number" name="phone_number" class="modal-input px-3 py-2 w-100">
+                    </div>
+                      <div class="my-2 w-100">
+                          <input type="password" placeholder="Password" class="modal-input px-3 py-2 w-100">
+                      </div>
+                      <div class="my-3 w-100">
+                          <button class="modal-login-btn w-100 p-3 text-center">Signup</button>
+                      </div>
+                      
+                      <div class="my-2 x-small">
+                          <p>By registering and clicking<span class="fw-bold nav-active">”SIGN UP”</span>, you agree to our  Terms of Use, Privacy policy and Cookie Policy</p>
+                      </div>
+                      <div class="more-signup-opts my-3">
+                        <div>
+                            <p class="nav-active h5"> ⎯ Or Signup With  ⎯</p>
+                        </div>
+                        <div class="d-flex justify-content-center align-items-center h4">
+                            <div class="mx-1 rounded-circle px-2 py-1 border">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div class="mx-1 rounded-circle border px-2 py-1">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="mx-1 rounded-circle border px-2 py-1">
+                                <i class="fab fa-google"></i>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>`
           })
       </script>
 </body>
