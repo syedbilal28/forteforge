@@ -1,7 +1,7 @@
 from learning.models import Student
 from django.shortcuts import redirect, render, HttpResponse
 # from . import forms
-from .forms import ProfileForm,UserForm,ContactForm
+from .forms import EnterpriseContactForm, ProfileForm,UserForm,ContactForm
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
@@ -72,3 +72,16 @@ def IndustrySpecificCourses(request):
 
 def EventDetails(request):
     return render(request,"learning/event-details.html")
+
+def Enterprise(request):
+    if request.method =="POST":
+        form=EnterpriseContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            form= EnterpriseContactForm()
+            context={"form":form}
+            return render(request,"learning/enterprise.html",context)    
+    else:
+        form= EnterpriseContactForm()
+        context={"form":form}
+        return render(request,"learning/enterprise.html",context)

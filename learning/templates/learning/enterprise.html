@@ -1,0 +1,264 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include "learning/links.html" %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Enterprise</title>
+    <style>
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
+        
+        .x-small{
+            font-size: 12px;
+        }
+        .blue-active{
+            color: #1592E6;
+        }
+        .enterprise-section,.people-say{
+            max-width: 300px;
+        }
+        .enterprise-sections,.what-people-say,.team-effective,.contact-enterprise{
+            min-width: 100vw;
+            font-family: Gilroy;
+        }
+        .enterprise-presenter{
+            max-width: 75px;
+        }
+        .people-say{
+            min-height: 230px;
+        }
+        .p-absolute{
+            
+            max-width: 300px;
+                 }
+        .enterprise-section{
+            min-height: 370px;
+            position: relative;
+        }
+        .enterprise-overlay{
+            position: absolute;
+            z-index: -1;
+            max-width: 300px;
+        }
+        .enterprise-overlay-1{
+            position: absolute;
+            z-index: -2;
+            max-width: 300px;
+        }
+        .h-auto{
+           height : auto !important;
+        }
+        .light-blue{
+            color: #6CF4EA;
+        }
+        .blue-bg{
+            background-color: #0231A2;
+        }
+        .form-content-wrapper{
+            min-width: 400px;
+        }
+        .enterprise-form-input{
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            color: white;
+        }
+        .enterprise-form-input::placeholder{
+            color: white;
+            
+        }
+        .enterprise-form-input:focus{
+            border: none;
+            outline: none;
+            background: transparent;
+            color: white;
+        }.enterprise-form-input:-webkit-autofill:focus{
+            transition: background-color 600000s 0s, color 600000s 0s;
+        }
+        .enterprise-form-input:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+        }
+        .enterprise-form-input[data-autocompleted] {
+            background-color: transparent !important;
+        }
+    </style>
+</head>
+<body>
+    {% include 'learning/header.html' %}
+    
+      <div class="container">
+          <!-- Top banner -->
+          <div class="top-wrapper top-img-container">
+            <img src="{% static 'img/enterprise-bg.png' %}" class="w-100 overlay-1" alt="">
+              <!-- <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt=""> -->
+            <div class="main-wrapper h-100 text-white px-5 py-5 d-flex flex-column justify-content-center">
+                <div class="w-50">
+                <h1 class="fw-bold extra blue-active h2">Managing Competitiveness<br> Can Be Hard.</h1>
+                <h1 class="fw-bold">We Make It Effortless.</h1>
+                </div>
+                
+            </div>
+        </div>
+        <div class="enterprise-sections p-5">
+            <div class="enterprise-sections-wrapper d-flex justify-content-center align-items-center">
+                <div class="enterprise-section mx-2 d-flex flex-column justify-content-end align-items-end rounded">
+                    
+                        <img src="{% static 'img/hire-competent.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
+                        <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
+                    
+                    <div class="blue-active mr-auto ml-auto px-2">
+                        <p class="h5 fw-bold">Hire Competent</p>
+                    </div>
+                    <div class="x-small mr-auto ml-auto px-2 text-center">
+                        <p class="text-white fw-bold">Forteforge is building the largest middle skill sector community of competent professionals ready to deliver value when you need them.</p>
+                    </div>
+
+
+                </div>
+                <div class="enterprise-section mx-2 d-flex flex-column justify-content-end align-items-end rounded">
+                    
+                    <img src="{% static 'img/corporate.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
+                
+                    <div class="blue-active mr-auto ml-auto px-2">
+                        <p class="h5 fw-bold">Corporate</p>
+                    </div>
+                    <div class="x-small mr-auto ml-auto px-2 text-center">
+                        <p class="text-white fw-bold">Forteforge delivers curated corporate training requisitions across knowledge areas connecting business to engineering to assure competitiveness and market leadership</p>
+                    </div>
+
+
+                </div>
+                <div class="enterprise-section mx-2 d-flex flex-column justify-content-end align-items-end rounded">
+                    
+                    <img src="{% static 'img/project-management.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
+                
+                    <div class="blue-active mr-auto ml-auto px-2">
+                        <p class="h5 fw-bold">Project Management</p>
+                    </div>
+                    <div class="x-small mr-auto ml-auto px-2 text-center">
+                        <p class="text-white fw-bold">Forteforge is building the largest middle skill sector community of competent professionals ready to deliver value when you need them.</p>
+                    </div>
+
+
+                </div>
+                <div class="enterprise-section mx-2 d-flex flex-column justify-content-end align-items-end rounded">
+                    
+                    <img src="{% static 'img/research-data-solutions.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
+                
+                    <div class="blue-active mr-auto ml-auto px-2">
+                        <p class="h5 fw-bold">Research & Data Services</p>
+                    </div>
+                    <div class="x-small mr-auto ml-auto px-2 text-center">
+                        <p class="text-white fw-bold">Making data sets accurate, easy to digest and actionable. Providing data that facilitates good decision making and application building.
+                        </p>
+                    </div>
+
+
+                </div>
+                
+            </div>
+        </div>
+        <div class="what-people-say">
+            <img src="{% static 'img/people-say-bg.png' %}" class="w-100 overlay-1 h-auto" alt="">
+            <img src="{% static 'img/Rectangle-blue.png' %}" class="w-100 overlay h-auto" alt="">
+            <div class="what-people-say-wrapper p-5">
+                <div class="row text-center my-3">
+                    <h2 class="fw-bold text-white">What People Say</h2>
+                </div>
+                <div class="d-flex justify-content-center align-items-center my-5">
+                    <div class="mx-3 p-3 people-say rounded bg-white d-flex flex-column justify-content-center align-items-center">
+                        <div class="row text-center my-2">
+                            <img src="{% static 'img/presenter.png' %}" class="enterprise-presenter" alt="">
+                        </div>
+                        <div class="row mb-2">
+                            <p class="h6">Jack White</p>
+                        </div>
+                        <div class="row mb-2">
+                            <p class="x-small fw-bold">Many Agile Project Management services are quite generalistic, and are not unique in application. Forteforge was several notches higher</p>
+                        </div>
+                    </div>
+                    <div class="mx-3 p-3 people-say rounded bg-white d-flex flex-column justify-content-center align-items-center">
+                        <div class="row text-center my-2">
+                            <img src="{% static 'img/presenter.png' %}" class="enterprise-presenter" alt="">
+                        </div>
+                        <div class="row mb-2">
+                            <p class="h6">Damy Alade</p>
+                        </div>
+                        <div class="row mb-2">
+                            <p class="x-small fw-bold">This was fantastic and detailed
+                                applying Agile Project Management in hybrid, to  the services industry.</p>
+                        </div>
+                    </div>
+                    <div class="mx-3 p-3 people-say rounded bg-white d-flex flex-column justify-content-center align-items-center">
+                        <div class="row text-center my-2">
+                            <img src="{% static 'img/presenter.png' %}" class="enterprise-presenter" alt="">
+                        </div>
+                        <div class="row mb-2">
+                            <p class="h6">Bisi Okuneye</p>
+                        </div>
+                        <div class="row mb-2">
+                            <p class="x-small fw-bold">The curated course designed for our company was taught by Justus, who demonstrated  why he is definitely one of the best. It was of immense business value. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="team-effective p-5 text-center mt-5">
+            <h2>Ready To Make <span class="blue-active">Your Team</span> More Effective?</h2>
+        </div>
+        <div class="contact-enterprise p-5 blue-bg">
+            <div class="contact-enterprise-wrapper d-flex flex-column justify-content-center align-items-center">
+                <div class="my-2 light-blue">
+                    <h1>CONTACT US</h1>
+                </div>
+                <div class="form-wrapper">
+                    <form action="{% url 'Enterprise' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-content-wrapper my-5">
+                            <div class="row my-4">
+                                {{ form.first_name }}
+                            </div>
+                            <div class="row my-4">
+                                {{ form.last_name }}
+                            </div>
+                            <div class="row my-4">
+                                {{ form.email }}
+                            </div>
+                            <div class="row my-4">
+                                {{ form.phone }}
+                            </div>
+                            <div class="row my-5">
+                                <button class="btn btn-primary form-control py-2" type="submit">Enroll</button>
+                            </div>
+                            <div class="row my-5">
+                                <p class="x-small fw-bold text-white">By registering and clicking”ENROLL”, you agree to our  Terms of Use, Privacy policy and Cookie Policy</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      {% include 'learning/footer.html' %}
+     
+      <script>
+          $("#id_first_name").addClass("form-control enterprise-form-input")
+          document.querySelector("#id_first_name").placeholder="First Name"
+          $("#id_last_name").addClass("form-control enterprise-form-input")
+          document.querySelector("#id_last_name").placeholder="Last Name"
+          $("#id_email").addClass("form-control enterprise-form-input")
+          document.querySelector("#id_email").placeholder="Email"
+          $("#id_phone").addClass("form-control enterprise-form-input")
+          document.querySelector("#id_phone").placeholder="Phone Number"
+      </script>
+</body>
+</html>

@@ -25,4 +25,10 @@ class Contact(models.Model):
     company=models.CharField(max_length=100,null=True)
     message=models.CharField(max_length=1000,null=True)
 
+class EnterPriseContact(models.Model):
+    first_name=models.CharField(max_length=100)
+    last_name=models.CharField(max_length=100)
+    phone=models.CharField(max_length=50)
+    email=models.EmailField()
+
 
