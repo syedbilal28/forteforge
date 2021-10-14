@@ -1,22 +1,28 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% include "learning/links.html" %}
     <style>
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
         .box{
             border: black;
         }
         .choice-btn{
-            background-color: black;
-            opacity: 0.6;
+            background-color: #FF5656;
+            
             border: none;
         }
         .choice-btn:hover{
-            background-color: black;
-            opacity: 0.8;
+            background-color: #ff3333;
+            
             transition: 0.3s;
 
         }
@@ -24,12 +30,14 @@
             border: 1px solid #e6e6e6;
             margin-right: 15px;
             margin-left: 15px;
+            background-color: white;
         }
-        .nav{
-            display: block !important;
-        }
-        #title{
-            opacity: 0.6;
+        
+        
+        .container{
+            position: relative;
+            min-width: 100vw;
+            font-family: Gilroy;
         }
         @media only screen and (max-width: 600px) {
         .flex-item {
@@ -42,47 +50,76 @@
             padding-left: 5px !important;
         }
 }
+.navbar{
+    border-bottom: 4px solid #FF5656;
+}
+.overlay-signup{
+    /* min-width: 100vw; */
+    z-index: -2;
+    object-fit: fill;
+
+}
+.overlay-signup-1{
+    z-index: -1;
+    /* min-width: 100vw; */
+    object-fit: fill;
+}
+.container-wrapper{
+    min-width: 100vw;
+}
     </style>
-    <title>Document</title>
+    <title>Signup As</title>
 </head>
 <body>
-    <header class="nav p-3 px-5 shadow">
-        <h3 id="title">Forteforge </h3>
-        
-    </header>
-    <div class="container">
-        <div class="container-top justify-content-center text-center my-4">
-            <h5>Please choose your user type for <br><strong>SIGN UP</strong></h5>
-        </div>
-        <div class="d-flex flex-row justify-content-center align-items-center main-flex">
-            <div class="flex-item box d-flex flex-column justify-content-center align-items-center py-5 px-3">
-                <div class="top-half p-3">
-                    <h4>Student/Learner</h4>
+    {% include 'learning/header.html' %}
+    <div class="container p-0 m-0 w-100">
+
+        <img src="{% static 'img/signup-choice-bg.png' %}" class="w-100 h-100 position-absolute overlay-signup" alt="">
+        <img src="{% static 'img/signup-choice-black.png' %}" class="w-100 h-100 position-absolute overlay-signup-1" alt="">
+        <div class="container-wrapper d-flex flex-column justify-content-center align-items-center py-5">
+            <div class="container-top justify-content-center text-center py-5">
+                <h5 class="text-white">Please choose your user type for <br><span class="nav-active h2">SIGN UP</span></h5>
+            </div>
+            <div class="d-flex flex-row justify-content-center align-items-center main-flex py-5">
+                <div class="flex-item rounded box d-flex flex-column justify-content-center align-items-center p-3">
+                    <div class="my-1 p-3 border rounded-circle">
+                        <img src="{% static 'img/scholar.png' %}" alt="">
+                    </div>
+                    <div class="top-half py-1">
+                        <h4>Student/Learner</h4>
+                    </div>
+                    <div class="bottom-half py-1">
+                        <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
+                    </div>
+                    <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
+                </div><br>
+                <div class="flex-item rounded d-flex flex-column justify-content-center align-items-center p-3">
+                    <div class="my-1 p-3 border rounded-circle">
+                        <img src="{% static 'img/educator.png' %}" alt="">
+                    </div>
+                    <div class="top-half py-1">
+                        <h4>Educator</h4>
+                    </div>
+                    <div class="bottom-half py-1">
+                        <p>Platform where learning is personalized, <br> adaptive and lifelong, allowing learners<br>from anywhere access superior instruction</p>
+                    </div>
+                    <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
+                </div><br><br>
+                <div class="flex-item rounded d-flex flex-column justify-content-center align-items-center p-3">
+                    <div class="my-1 p-3 border rounded-circle">
+                        <img src="{% static 'img/enterprise.png' %}" alt="">
+                    </div>
+                    <div class="top-half py-1">
+                        <h4>Enterprise</h4>
+                    </div>
+                    <div class="bottom-half py-1">
+                        <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
+                    </div>
+                    <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
                 </div>
-                <div class="bottom-half p-3">
-                    <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
-                </div>
-                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
-            </div><br>
-            <div class="flex-item d-flex flex-column justify-content-center align-items-center py-5 px-3">
-                <div class="top-half p-3">
-                    <h4>Educator</h4>
-                </div>
-                <div class="bottom-half p-3">
-                    <p>Platform where learning is personalized, <br> adaptive and lifelong, allowing learners<br>from anywhere access superior instruction</p>
-                </div>
-                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
-            </div><br><br>
-            <div class="flex-item d-flex flex-column justify-content-center align-items-center py-5 px-3">
-                <div class="top-half p-3">
-                    <h4>Enterprise</h4>
-                </div>
-                <div class="bottom-half p-3">
-                    <p>Learn, Work, Grow, Repeat---Learn from <br> valuable connection, offer learning to <br> valuable  connections, on-demand</p>
-                </div>
-                <input type="button" class="m-3 px-5 py-2 btn btn-primary choice-btn" value="SIGNUP">
             </div>
         </div>
     </div>
+    {% include 'learning/footer.html' %}
 </body>
 </html>

@@ -1,222 +1,238 @@
-{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% include 'learning/links.html' %}
+    <title>Signup as Student</title>
+    <style>
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
+        .get {
+            width: 100%;
+            padding: 10px;
+        }
 
-{% block title %}SignUp{% endblock %}
+        
 
-{% block content %}
-<style>
-    .get {
-        width: 100%;
-        padding: 10px;
-    }
+        
+        .chosen-container-multi .chosen-choices {
+            padding: 10px;
+        }
+        .container{
+            font-family: Gilroy;
+        }
+        label{
+            color: #7D7E7F;
+        }
+        input{
+            border: 1px solid #FF5656 !important;
+        }
+    </style>
+</head>
 
-    .btn-1 {
-        border: none;
-        border-radius: 8px;
-        width: 30%;
-        padding: 10px;
-    }
+    <body>
+        {% include 'learning/header.html' %}
+        <div class="container m-auto py-5">
+            <div class="container-wrapper">
+                <h4>Sign up as <br><span class="h2 nav-active">STUDENT/LEARNER</span></h4><br>
+                <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-wrapper">
+                        
+                        <p class="nav-active h5">Enter Personal Details</p>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <label for="first-name" ><strong>First Name</strong></label><br>
+                                <!-- <input class="get" type="text" name="first name" id="first-name" placeholder="Enter First Name"> -->
+                                {{ userform.first_name }}
+                            </div>
+                            <div class="col">
+                                <label for="last-name"><strong>Last Name</strong></label><br>
+                                <!-- <input class="get" type="text" name="last name" id="last-name" placeholder="Enter Last Name"> -->
+                                {{ userform.last_name }}
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="dob"><strong>Date of Birth</strong></label><br>
+                                <!-- <input class="get" type="date" name="date of birth" id="dob" placeholder="Enter Date of Birth"> -->
+                                {{ profileform.dob }}
+                            </div>
+                            <div class="col">
 
-    .btn-2 {
-        border: none;
-        border-radius: 8px;
-        width: 40%;
-        padding: 10px;
-    }
-
-    .btn-3 {
-        border: none;
-        border-radius: 8px;
-        width: 20%;
-        padding: 10px;
-    }
-
-    .chosen-container-multi .chosen-choices {
-        padding: 10px;
-    }
-</style>
-
-<header class="nav"></header>
-<div class="container d-flex justify-content-center">
-
-    <form action="{% url 'signup' %}" method="POST" class="form-control" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="form-wrapper">
-            <h4>Sign Up as <br><strong>STUDENT/LEARNER</strong></h4><br>
-            <p>Enter Personal Details</p>
-            <div class="row">
-                <div class="col">
-                    <label for="first-name"><strong>First Name</strong> </label><br>
-                    <!-- <input class="get" type="text" name="first name" id="first-name" placeholder="Enter First Name"> -->
-                    {{ userform.first_name }}
-                </div>
-                <div class="col">
-                    <label for="last-name"><strong>Last Name</strong></label><br>
-                    <!-- <input class="get" type="text" name="last name" id="last-name" placeholder="Enter Last Name"> -->
-                    {{ userform.last_name }}
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="dob"><strong>Date of Birth</strong></label><br>
-                    <!-- <input class="get" type="date" name="date of birth" id="dob" placeholder="Enter Date of Birth"> -->
-                    {{ profileform.dob }}
-                </div>
-                <div class="col">
-
-                </div>
-            </div><br>
-            <p>Enter Your Address</p>
-            <div class="row">
-                <div class="col">
-                    <label for="postal code"><strong>Postal Code</strong></label><br>
-                    <!-- <input class="get" type="number" name="postal code" id="postal code" placeholder="Enter Postal Code"> -->
-                    {{ profileform.postal_code }}
-                </div>
-                <div class="col">
-                    <label for="street name"><strong>Street Name</strong></label><br>
-                    <!-- <input class="get" type="text" name="street name" id="street name" placeholder="Enter Street"> -->
-                    {{ profileform.street_name }}
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="city"><strong>City</strong></label><br>
-                    <!-- <input class="get" type="text" name="" id="city" placeholder="Enter City"> -->
-                    {{ profileform.city }}
-                </div>
-                <div class="col">
-                    <label for="State"><strong>State</strong></label><br>
-                    <!-- <input class="get" type="text" name="" id="state" placeholder="Enter State"> -->
-                    {{ profileform.state }}
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="country"><strong>Country</strong></label><br>
-                    <!-- <input class="get" type="text" name="" id="country" placeholder="Enter Country"> -->
-                    {{ profileform.country }}
-                </div>
-                <div class="col">
-                    <label for="email"><strong>Email</strong></label><br>
-                    <!-- <input class="get" type="email" name="" id="email" placeholder="Enter Email"> -->
-                    {{ userform.email }}
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="password"><strong>Password</strong></label><br>
-                    <!-- <input class="get" type="password" name="" id="password" placeholder="Enter Password"> -->
-                    {{ userform.password }}
-                </div>
-                <div class="col">
-                    <label for="c-password"><strong>Confirm Password</strong></label><br>
-                    <input class="get" type="password" name="" id="c-password" placeholder="Re-enter Password">
-                </div>
-            </div><br>
-            <p>Portfolio and availiblity</p>
-            <div class="row">
-                <div class="col">
-                    <label for="work category"><strong>Work Category</strong></label><br>
-                    <select class="get" name="" id="work category">
-                        <option selected>Select Work Category</option>
-                        <option value="abc">ABC</option>
-                        <option value="xyz">xyz</option>
-                        <option value="pqr">PQR</option>
-                    </select><br>
-                    <form action="">
-                        <input class="btn-1 btn-primary" type="submit" value="Add New Category">
-                    </form>
-                </div>
-                <div class="col">
-                    <label for="sub-category"><strong>Sub Category</strong></label><br>
-                    <select class="get" name="" id="sub-category">
-                        <option selected>Select Sub-Category</option>
-                        <option value="abc">ABC</option>
-                        <option value="xyz">xyz</option>
-                        <option value="pqr">PQR</option>
-                    </select><br>
-                    <form action="">
-                        <input class="btn-2 btn-primary" type="submit" value="Add New Sub-Category">
-                    </form>
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="attach portfolio"><strong>Attached Portfolio</strong></label>
-                    <p>(An original work sample is required, you will be disqualified for <br>providing work not created
-                        by you)</p>
-                    
-                        <div class="custom-file">
-                            <!-- <input type="file" class="custom-file-input" id="customFile"> -->
-                            {{ profileform.portfolio }}
-                            <label class="custom-file-label" for="customFile">Add Portfolio</label>
+                            </div>
+                        </div><br>
+                        <p class="nav-active h5">Enter Your Address</p>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <label for="postal code"><strong>Postal Code</strong></label><br>
+                                <!-- <input class="get" type="number" name="postal code" id="postal code" placeholder="Enter Postal Code"> -->
+                                {{ profileform.postal_code }}
+                            </div>
+                            <div class="col">
+                                <label for="street name"><strong>Street Name</strong></label><br>
+                                <!-- <input class="get" type="text" name="street name" id="street name" placeholder="Enter Street"> -->
+                                {{ profileform.street_name }}
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="city"><strong>City</strong></label><br>
+                                <!-- <input class="get" type="text" name="" id="city" placeholder="Enter City"> -->
+                                {{ profileform.city }}
+                            </div>
+                            <div class="col">
+                                <label for="State"><strong>State</strong></label><br>
+                                <!-- <input class="get" type="text" name="" id="state" placeholder="Enter State"> -->
+                                {{ profileform.state }}
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="country"><strong>Country</strong></label><br>
+                                <!-- <input class="get" type="text" name="" id="country" placeholder="Enter Country"> -->
+                                {{ profileform.country }}
+                            </div>
+                            <div class="col">
+                                <label for="email"><strong>Email</strong></label><br>
+                                <!-- <input class="get" type="email" name="" id="email" placeholder="Enter Email"> -->
+                                {{ userform.email }}
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="password"><strong>Password</strong></label><br>
+                                <!-- <input class="get" type="password" name="" id="password" placeholder="Enter Password"> -->
+                                {{ userform.password }}
+                            </div>
+                            <div class="col">
+                                <label for="c-password"><strong>Confirm Password</strong></label><br>
+                                <input class="get" type="password" name="" id="c-password" placeholder="Re-enter Password">
+                            </div>
+                        </div><br>
+                        <p class="nav-active h5">Portfolio and availiblity</p>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <label for="work category"><strong>Work Category</strong></label><br>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <select class="get" name="" id="work category">
+                                            <option selected>Select Work Category</option>
+                                            <option value="abc">ABC</option>
+                                            <option value="xyz">xyz</option>
+                                            <option value="pqr">PQR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-primary">Add new category</button>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="col">
+                                <label for="sub-category"><strong>Sub Category</strong></label><br>
+                                <div class="row">
+                                    <div class="col-8">
+                                        <select class="get" name="" id="sub-category">
+                                            <option selected>Select Sub-Category</option>
+                                            <option value="abc">ABC</option>
+                                            <option value="xyz">xyz</option>
+                                            <option value="pqr">PQR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <button class="btn btn-primary">Add new sub-category</button>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="attach portfolio"><strong>Attached Portfolio</strong></label>
+                                <p>(An original work sample is required, you will be disqualified for <br>providing work not created
+                                    by you)</p>
+                                
+                                    <div class="custom-file">
+                                        <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                                        {{ profileform.portfolio }}
+                                        <label class="custom-file-label" for="customFile">Add Portfolio</label>
+                                    </div>
+                                
+                                <script>
+                                    $(".custom-file-label").on("click", function () {
+                                        event.preventDefault()
+                                        $("#id_portfolio").click()
+                                    })
+                                    // Add the following code if you want the name of the file appear on select
+                                    // $("#id_portfolio").hide()
+                                    $("#id_portfolio").on("change", function () {
+                                        var fileName = $(this).val().split("\\").pop();
+                                        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                                    });
+                                </script>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="availiblity"><strong>Set Your Availiblity</strong></label><br>
+                                <select data-placeholder="Select Days..." name="days" class="get days" id="availiblity" multiple>
+                                    <option value="monday">Monday</option>
+                                    <option value="tuesday">Tuesday</option>
+                                    <option value="wednesday">Wednesday</option>
+                                    <option value="thursday">Thursday</option>
+                                    <option value="friday">Friday</option>
+                                    <option value="saturday">Saturday</option>
+                                    <option value="sunday">Sunday</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <br>
+                                <input class="get" type="text" name="" id="" placeholder="Select Your Location For Field Work"
+                                    style="margin-top: 8px;">
+                            </div>
+                        </div><br>
+                        <div class="d-flex">
+                            <input type="checkbox" id="checkbox"> <span>
+                                <p class="mb-0 ml-2">I understand and agree <strong>with the terms and Conditions</strong>.</p>
+                            </span>
+                        </div><br>
+                        <div>
+                            <input class="btn-3 btn-primary mb-4" type="submit" value="Sign Up" id="btn-signup" disabled>
                         </div>
-                    
-                    <script>
-                        $(".custom-file-label").on("click", function () {
-                            event.preventDefault()
-                            $("#id_portfolio").click()
-                        })
-                        // Add the following code if you want the name of the file appear on select
-                        // $("#id_portfolio").hide()
-                        $("#id_portfolio").on("change", function () {
-                            var fileName = $(this).val().split("\\").pop();
-                            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                        });
-                    </script>
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col">
-                    <label for="availiblity"><strong>Set Your Availiblity</strong></label><br>
-                    <select data-placeholder="Select Days..." name="days" class="get days" id="availiblity" multiple>
-                        <option value="monday">Monday</option>
-                        <option value="tuesday">Tuesday</option>
-                        <option value="wednesday">Wednesday</option>
-                        <option value="thursday">Thursday</option>
-                        <option value="friday">Friday</option>
-                        <option value="saturday">Saturday</option>
-                        <option value="sunday">Sunday</option>
-                    </select>
-                </div>
-                <div class="col">
-                    <br>
-                    <input class="get" type="text" name="" id="" placeholder="Select Your Location For Field Work"
-                        style="margin-top: 8px;">
-                </div>
-            </div><br>
-            <div class="d-flex">
-                <input type="checkbox" id="checkbox"> <span>
-                    <p class="mb-0 ml-2">I understand and agree <strong>with the terms and Conditions</strong>.</p>
-                </span>
-            </div><br>
-            <div>
-                <input class="btn-3 btn-primary mb-4" type="submit" value="Sign Up" id="btn-signup" disabled>
+                    </div>
+                </form>
             </div>
         </div>
-    </form>
-</div>
 
-<script>
-    const ids = ["id_first_name", "id_last_name", "id_dob", "id_postal_code", "id_street_name", "id_city", "id_state", "id_country", "id_email", "id_password"]
-    ids.forEach((id) => {
-        const element = document.getElementById(id)
-        element.classList.add("get")
-    })
-    $(".days").chosen({
-        no_results_text: "Oops, nothing found!"
-    })
+        <script>
+            const ids = ["id_first_name", "id_last_name", "id_dob", "id_postal_code", "id_street_name", "id_city", "id_state", "id_country", "id_email", "id_password","c-password"]
+            ids.forEach((id) => {
+                const element = document.getElementById(id)
+                element.classList.add("get")
+                element.classList.add("form-control")
+            })
+            $(".days").chosen({
+                no_results_text: "Oops, nothing found!"
+            })
 
-    $("#id_dob").get(0).type = "date"
-    $("#id_email").get(0).type = "email"
-    $("#id_password").get(0).type = "password"
-    $("#id_postal_code").get(0).type = "number"
-    
+            $("#id_dob").get(0).type = "date"
+            $("#id_email").get(0).type = "email"
+            $("#id_password").get(0).type = "password"
+            $("#id_postal_code").get(0).type = "number"
+            
 
-    $(function () {
-        $('#checkbox').click(function () {
-            $('#btn-signup').prop('disabled', !$('#checkbox:checked').length);
-        });
-    });
-</script>
-{% endblock %}
+            $(function () {
+                $('#checkbox').click(function () {
+                    $('#btn-signup').prop('disabled', !$('#checkbox:checked').length);
+                });
+            });
+        </script>
+    </body>
+</html>
