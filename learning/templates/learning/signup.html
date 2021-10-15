@@ -9,6 +9,7 @@
     {% include 'learning/links.html' %}
     <title>Signup as Student</title>
     <style>
+        
         @font-face {
             font-family: Gilroy;
             src: url('/static/fonts/Gilroy-Regular.ttf');
@@ -16,6 +17,7 @@
         .get {
             width: 100%;
             padding: 10px;
+            
         }
 
         
@@ -29,9 +31,73 @@
         }
         label{
             color: #7D7E7F;
+            font-family: Arial, Helvetica, sans-serif;
         }
         input{
             border: 1px solid #FF5656 !important;
+        }
+        .col{
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        .form-wrapper>p{
+            padding-left: 1.5rem;
+        }
+        .category-btn{
+            background-color: #384651;
+            border: 1px solid #384651;
+        }
+        .category-btn:hover{
+            background-color: white;
+            border: 1px solid #384651;
+            color: #384651;
+            transition: 0.2s;
+        }
+        .custom-file-label::after{
+            display: none;
+        }
+        .custom-file-label:hover{
+            cursor: pointer;
+        }
+        .portfolio-add{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 19px;
+            z-index: 10;
+        }
+        .custom-file-label{
+            border: 1px solid #FF5656;
+        }
+        .form-control{
+            border: 1px solid #FF5656;
+        }
+        .submit-btn{
+            background-color: #FF5656;
+            border: 1px solid #FF5656;
+        }
+        .submit-btn:hover{
+            background-color: white;
+            color: #FF5656;
+            border: 1px solid #FF5656;
+            transition: 0.2s;
+            
+        }
+        #check{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0.1rem;
+            padding: 5px;
+        }
+        #check:hover{
+            cursor: pointer;
+        }
+        #check:checked{
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+            background-color: #FF5656;
         }
     </style>
 </head>
@@ -40,7 +106,7 @@
         {% include 'learning/header.html' %}
         <div class="container m-auto py-5">
             <div class="container-wrapper">
-                <h4>Sign up as <br><span class="h2 nav-active">STUDENT/LEARNER</span></h4><br>
+                <h4 class="pl-4 text-secondary">Sign up as <br><span class="h2 nav-active">STUDENT/LEARNER</span></h4><br>
                 <form action="{% url 'signup' %}" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-wrapper">
@@ -122,7 +188,7 @@
                                 <label for="work category"><strong>Work Category</strong></label><br>
                                 <div class="row">
                                     <div class="col-8">
-                                        <select class="get" name="" id="work category">
+                                        <select class="get h-100 form-control" name="" id="category">
                                             <option selected>Select Work Category</option>
                                             <option value="abc">ABC</option>
                                             <option value="xyz">xyz</option>
@@ -130,7 +196,7 @@
                                         </select>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-primary">Add new category</button>
+                                        <button class="btn btn-primary text-center category-btn">Add new<br>category</button>
                                     </div>
                                 </div>
                                 
@@ -139,7 +205,7 @@
                                 <label for="sub-category"><strong>Sub Category</strong></label><br>
                                 <div class="row">
                                     <div class="col-8">
-                                        <select class="get" name="" id="sub-category">
+                                        <select class="get h-100 form-control" name="" id="sub-category">
                                             <option selected>Select Sub-Category</option>
                                             <option value="abc">ABC</option>
                                             <option value="xyz">xyz</option>
@@ -147,7 +213,7 @@
                                         </select>
                                     </div>
                                     <div class="col-4">
-                                        <button class="btn btn-primary">Add new sub-category</button>
+                                        <button class="btn btn-primary text-center category-btn">Add new<br>sub-category</button>
                                     </div>
                                     
                                 </div>
@@ -155,7 +221,7 @@
                         </div><br>
                         <div class="row">
                             <div class="col">
-                                <label for="attach portfolio"><strong>Attached Portfolio</strong></label>
+                                <label for="attach portfolio" class="h5"><strong>Attached Portfolio</strong></label>
                                 <p>(An original work sample is required, you will be disqualified for <br>providing work not created
                                     by you)</p>
                                 
@@ -163,6 +229,7 @@
                                         <!-- <input type="file" class="custom-file-input" id="customFile"> -->
                                         {{ profileform.portfolio }}
                                         <label class="custom-file-label" for="customFile">Add Portfolio</label>
+                                        <i class="fas fa-plus-circle portfolio-add"></i>
                                     </div>
                                 
                                 <script>
@@ -178,11 +245,12 @@
                                     });
                                 </script>
                             </div>
+                            <div class="col"></div>
                         </div><br>
                         <div class="row">
                             <div class="col">
                                 <label for="availiblity"><strong>Set Your Availiblity</strong></label><br>
-                                <select data-placeholder="Select Days..." name="days" class="get days" id="availiblity" multiple>
+                                <select data-placeholder="Select Days..." name="days" class="get days selectpicker w-100 p-0 rounded border" id="availiblity" multiple data-live-search="true">
                                     <option value="monday">Monday</option>
                                     <option value="tuesday">Tuesday</option>
                                     <option value="wednesday">Wednesday</option>
@@ -191,6 +259,7 @@
                                     <option value="saturday">Saturday</option>
                                     <option value="sunday">Sunday</option>
                                 </select>
+                                
                             </div>
                             <div class="col">
                                 <br>
@@ -198,29 +267,37 @@
                                     style="margin-top: 8px;">
                             </div>
                         </div><br>
-                        <div class="d-flex">
-                            <input type="checkbox" id="checkbox"> <span>
-                                <p class="mb-0 ml-2">I understand and agree <strong>with the terms and Conditions</strong>.</p>
+                        <div class="ml-4">
+                            <input type="checkbox" id="check">
+                            <p class="mb-0 ml-2 d-inline">I understand and agree <strong class="nav-active">with the terms and Conditions</strong>.</p>
                             </span>
-                        </div><br>
-                        <div>
-                            <input class="btn-3 btn-primary mb-4" type="submit" value="Sign Up" id="btn-signup" disabled>
                         </div>
+                        <div class="row my-5">
+                            <div class="col">
+                                <button class="btn btn-primary submit-btn w-75 py-3 fw-bold" type="submit"  id="btn-signup" >COMPLETE YOUR SIGN UP</button>
+                        
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        
+                            
                     </div>
                 </form>
             </div>
         </div>
-
+        {% include 'learning/footer.html' %}
         <script>
+            $(".category-btn").addClass("h-100 w-100")
+            
             const ids = ["id_first_name", "id_last_name", "id_dob", "id_postal_code", "id_street_name", "id_city", "id_state", "id_country", "id_email", "id_password","c-password"]
             ids.forEach((id) => {
                 const element = document.getElementById(id)
                 element.classList.add("get")
                 element.classList.add("form-control")
             })
-            $(".days").chosen({
-                no_results_text: "Oops, nothing found!"
-            })
+            // $(".days").chosen({
+            //     no_results_text: "Oops, nothing found!"
+            // })
 
             $("#id_dob").get(0).type = "date"
             $("#id_email").get(0).type = "email"

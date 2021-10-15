@@ -1,186 +1,176 @@
-{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% include 'learning/links.html' %}
+    <title>Signup | Enterprise</title>
 
-{% block title %}Sign up As Enterprise{% endblock %}
+    
 
-{% block content %}
     <style>
-        /* .get{
-            width: 70%;
-            border-radius: 8px;
-            padding: 10px;
-        } */
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
+        .container{
+            font-family: Gilroy;
+        }
         .get-1{
             width: 30%;
             border-radius: 8px;
             padding: 10px;
         }
-        /* .form-control{
-            margin-left: 100px;
-            margin-right: 100px;
-        } */
+        .col{
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        label{
+            font-family: Arial, Helvetica, sans-serif;
+            color: #7D7E7F;
+        }
+        input{
+            border: 1px solid #FF5656 !important;
+        }
+        .submit-btn{
+            background-color: #FF5656;
+            color: white;
+            border: 1px solid #FF5656;
+        }
+        .submit-btn:hover{
+            background-color: white;
+            border: 1px solid #FF5656;
+            color: #FF5656;
+        }
+        #check{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 0.1rem;
+            padding: 5px;
+        }
+        #check:hover{
+            cursor: pointer;
+        }
+        #check:checked{
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E");
+            background-color: #FF5656;
+        }
     </style>
-
-    <header class="nav p-3 px-5 shadow">
-            <h3 id="title">Forteforge </h3>
-            
-    </header>
-    <div class="container d-flex justify-content-center my-5">
+</head>
+<body>
+    {% include 'learning/header.html' %}
+    <div class="container my-5 mx-auto">
         <form action="" class="w-100">
-            <div class="form-wrapper">
-                <h4>Sign Up as <br><strong><span class="h5">ENTERPRISE</span></strong></h4><br>
-                <h5>Company Details</h5>
-                <div class="row">
-                    <div class="col">
-                        <label for="cname"><strong>Company Name</strong></label><br>
-                        <input class="form-control" type="text" name="" id="cname" placeholder="Enter Company Name">
-                    </div>
-                    <div class="col">
-                        <label for=""><strong>Learner Type</strong></label>
-                        <select name="" id="" class="custom-select">
-                            <option value="">Select Learner Type</option>
-                        </select>
-                    </div>
-                </div><br>
-                <h5 class="my-3">Resposible Officer</h5>
-                <div class="row">
-                    <div class="col">
-                        <label for="first-name"><strong>First Name</strong> </label><br>
-                        <input class="form-control" type="text" name="first name" id="first-name" placeholder="Enter First Name">
-                    </div>
-                    <div class="col">
-                        <label for="last-name"><strong>Last Name</strong></label><br>
-                        <input class="form-control" type="text" name="last name" id="last-name" placeholder="Enter Last Name">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col"> 
-                        <label for="title"><strong>Title</strong></label><br>
-                        <input class="form-control" type="text" name="" id="tittle" placeholder="Enter Title of Officer">
-                    </div>
-                    <div class="col">
-                        <label for="function"><strong>Function</strong></label><br>
-                        <input class="form-control" type="text" name="" id="function" placeholder="Enter Function of Officer">
-                    </div>     
-                </div><br>
-                <div class="row">
-                    <div class="col">
-                        <label for="work-email"><strong>Work Email</strong></label><br>
-                        <input class="form-control" type="text" name="" id="work-email" placeholder="Enter Work Email">
-                    </div>
-                    <div class="col"></div>
-                </div><br>
-                <h5>Enter Address</h5>
-                <div class="row">
-                    <div class="col">
-                        <label for="postal code"><strong>Postal Code</strong></label><br>
-                        <input class="form-control" type="text" name="postal code" id="postal code" placeholder="Enter Postal Code">
-                    </div>
-                    <div class="col">
-                        <label for="street name"><strong>Street Name</strong></label><br>
-                        <input class="form-control" type="text" name="street name" id="street name" placeholder="Enter Street Name">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col">
-                        <label for="city"><strong>City</strong></label><br>
-                        <input class="form-control" type="text" name="" id="city" placeholder="Enter City">
-                    </div>
-                    <div class="col">
-                        <label for="state"><strong>State</strong></label><br>
-                        <input class="form-control" type="text" name="state" id="state" placeholder="Enter State">
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col">
-                        <label for="country"><strong>Country</strong></label><br>
-                        <input class="form-control" type="text" name="" id="country" placeholder="Enter Country">
-                    </div>
-                    <div class="col">
-                        <label for="email"><strong>Email</strong></label><br>
-                        <input class="form-control" type="email" name="" id="email" placeholder="Enter Email">
-                    </div>
-                </div><br>
-                <h5 class="my-3">Security</h5>
-                <div class="row">
-                    <div class="col">
-                        <label for="password"><strong>Password</strong></label><br>
-                        <input class="form-control" type="password" name="" id="password" placeholder="Enter Password">
-                    </div>
-                    <div class="col">
-                        <label for="c-password"><strong>Confirm Password</strong></label><br>
-                        <input class="form-control" type="password" name="" id="c-password" placeholder="Re-enter Password">
-                    </div>
-                </div><br>
-                <!-- <h5>Requirement</h5><br>
-                <form>
-                    <fieldset id="group1">
-                      <input type="radio" value="tasks" name="group1">
-                      <label for="">Tasks</label> 
-                      <input type="radio" value="project" name="group1">
-                      <label for="project">Projects</label>
-                      <input type="radio" value="Operations" name="group1">
-                      <label for="Operations">Operations</label>
-                    </fieldset><br>
-                    <h6><strong>Types of Requirements</strong></h6>
-                    <fieldset id="group2">
-                      <input type="radio" value="intern" name="group2">
-                      <label for="intern">Interns</label>
-                      <input type="radio" value="apprentices" name="group2">
-                      <label for="apprentices">Apprentices</label>
-                      <input type="radio" value="expert" name="group2">
-                      <label for="expert">Expert</label>
-                    </fieldset><br>
-                    <h6><strong>Frequency of Requirements</strong></h6>
-                    <fieldset id="group3">
-                      <input type="radio" value="1 off" name="group3">
-                      <label for="1 off">1 off</label>
-                      <input type="radio" value="project" name="group3">
-                      <label for="project">Projects</label>
-                      <input type="radio" value="Operations" name="group3">
-                      <label for="Operations">Operations</label>
-                    </fieldset>
-                  </form><br> -->
-                  <!-- <div class="row">
-                      <div class="col">
-                          <h6><strong>Deadline of Requirement</strong></h6>
-                          <input class="get" type="date" name="" id="" placeholder="Select Date">
-                      </div>
-                      <div class="col"></div>
-                  </div><br> -->
-                  <!-- <h5>Others</h5>
-                  <form>
-                      <h6><strong>Faciliation Interest</strong></h6>
-                    <fieldset id="group1">
-                      <input type="radio" value="event" name="group1">
-                      <label for="event">Events</label> 
-                      <input type="radio" value="webiner" name="group1">
-                      <label for="webiner">Webiner</label>
-                      <input type="radio" value="prrof of concept" name="group1">
-                      <label for="proof of concept">Proof of Concept</label>
-                      <input type="radio" value="classes" name="group1">
-                      <label for="classes">Classes</label>
-                    </fieldset><br>
-                    <h6><strong>Attendance Interest</strong></h6>
-                    <fieldset id="group2">
-                        <input type="radio" value="event" name="group2">
-                        <label for="event">Events</label> 
-                        <input type="radio" value="webiner" name="group2">
-                        <label for="webiner">Webiner</label>
-                        <input type="radio" value="prrof of concept" name="group2">
-                        <label for="proof of concept">Proof of Concept</label>
-                        <input type="radio" value="classes" name="group2">
-                        <label for="classes">Classes</label>
-                    </fieldset>
-                  </form><br> -->
-                  <div>
-                      <input type="checkbox" id="check">
-                      <label for="check">I understand and agree <strong>with the terms and Conditions</strong></label>
-                  </div>
-                  <div>
-                      
-                      <button class="btn btn-secondary px-5 py-2 my-3" type="submit" >COMPLETE YOUR SIGNUP</button>
-                  </div>
+            {% csrf_token %}
+                <div class="container-wrapper">
+                    <h4 class="text-secondary">Sign Up as <br><span class="h3 nav-active fw-bold">ENTERPRISE</span></h4><br>
+                    <h5 class="pl-4 nav-active">Company Details</h5>
+                    <div class="form-wrapper">
+                        <div class="row mt-4">
+                            <div class="col">
+                                <label for="cname"><strong>Company Name</strong></label><br>
+                                <input class="form-control" type="text" name="" id="cname" placeholder="Enter Company Name">
+                            </div>
+                            <div class="col">
+                                <label for=""><strong>Learner Type</strong></label>
+                                <select name="" id="" class="custom-select">
+                                    <option value="">Select Learner Type</option>
+                                </select>
+                            </div>
+                        </div><br>
+                        <h5 class="my-3 pl-4 nav-active">Responsible Officer</h5>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <label for="first-name"><strong>First Name</strong> </label><br>
+                                <input class="form-control" type="text" name="first name" id="first-name" placeholder="Enter First Name">
+                            </div>
+                            <div class="col">
+                                <label for="last-name"><strong>Last Name</strong></label><br>
+                                <input class="form-control" type="text" name="last name" id="last-name" placeholder="Enter Last Name">
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col"> 
+                                <label for="title"><strong>Title</strong></label><br>
+                                <input class="form-control" type="text" name="" id="tittle" placeholder="Enter Title of Officer">
+                            </div>
+                            <div class="col">
+                                <label for="function"><strong>Function</strong></label><br>
+                                <input class="form-control" type="text" name="" id="function" placeholder="Enter Function of Officer">
+                            </div>     
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="work-email"><strong>Work Email</strong></label><br>
+                                <input class="form-control" type="text" name="" id="work-email" placeholder="Enter Work Email">
+                            </div>
+                            <div class="col"></div>
+                        </div><br>
+                        <h5 class="my-3 nav-active pl-4">Enter Address</h5>
+                        <div class="row">
+                            <div class="col">
+                                <label for="postal code"><strong>Postal Code</strong></label><br>
+                                <input class="form-control" type="text" name="postal code" id="postal code" placeholder="Enter Postal Code">
+                            </div>
+                            <div class="col">
+                                <label for="street name"><strong>Street Name</strong></label><br>
+                                <input class="form-control" type="text" name="street name" id="street name" placeholder="Enter Street Name">
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="city"><strong>City</strong></label><br>
+                                <input class="form-control" type="text" name="" id="city" placeholder="Enter City">
+                            </div>
+                            <div class="col">
+                                <label for="state"><strong>State</strong></label><br>
+                                <input class="form-control" type="text" name="state" id="state" placeholder="Enter State">
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col">
+                                <label for="country"><strong>Country</strong></label><br>
+                                <input class="form-control" type="text" name="" id="country" placeholder="Enter Country">
+                            </div>
+                            <div class="col">
+                                <label for="email"><strong>Email</strong></label><br>
+                                <input class="form-control" type="email" name="" id="email" placeholder="Enter Email">
+                            </div>
+                        </div><br>
+                        <h5 class="my-3 pl-4 nav-active">Security</h5>
+                        <div class="row">
+                            <div class="col">
+                                <label for="password"><strong>Password</strong></label><br>
+                                <input class="form-control" type="password" name="" id="password" placeholder="Enter Password">
+                            </div>
+                            <div class="col">
+                                <label for="c-password"><strong>Confirm Password</strong></label><br>
+                                <input class="form-control" type="password" name="" id="c-password" placeholder="Re-enter Password">
+                            </div>
+                        </div><br>
+                        
+                        <div class="pl-4 mt-3">
+                            <input type="checkbox" id="check" class="mx-1">
+                            <label for="check" class="d-inline">I understand and agree <strong>with the terms and Conditions</strong></label>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col">
+                                <button class="btn btn-secondary fw-bold py-3 my-3 w-75 submit-btn" type="submit" >COMPLETE YOUR SIGNUP</button>
+                        
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                        
+                </div>
             </div>
         </form>
+    
     </div>
-{% endblock %}
+</body>
+</html>
