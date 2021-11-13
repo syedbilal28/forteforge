@@ -75,7 +75,7 @@
             font-size: 10px;
         }
         .course{
-            max-width: 324px;
+            max-width: 280px;
         }
         .course-choice:hover{
             cursor: pointer;
@@ -88,6 +88,11 @@
             visibility: hidden;
         }
     </style>
+    <script>
+        $(document).ready(function(){
+            CallCourses("Industry Agnostic")
+        })
+    </script>
 </head>
 <body>
     {% include 'learning/header.html' %}
@@ -221,7 +226,7 @@
         <div class="courses p-5">
             <div class="d-flex flex-column align-items-center">
                 <div class="course-wrapper">
-                    <div class="d-flex">
+                    <!-- <div class="d-flex">
                         <div class="course m-3 shadow">
                             <div class="course-top">
                                 <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
@@ -683,7 +688,7 @@
                             </div>
                         </div>
                         
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -771,6 +776,7 @@
           $(".course-choice").on("click",function(){
             RemoveActiveClass()
             $(this).addClass("course-active")
+            CallCourses(this.children[0].innerText.split(" ").slice(0,2).join(" "))
           })
           function RemoveActiveClass(){
               $(".course-choice").removeClass("course-active")
@@ -778,6 +784,52 @@
           $(".course").on("click",function(){
               window.location.href="{% url 'Course' %}"
           })
+          function CallCourses(keyword){
+              $.ajax({
+                  url:"/courses/"+keyword+"/",
+                  method:"GET",
+                  success: function(data){
+                    //   console.log(data)
+                      LoadCourse(data.courses)
+                  }
+              })
+          }
+          function LoadCourse(courses){
+                document.querySelector(".course-wrapper").innerHTML=""
+                l=courses.length
+                console.log(l)
+                for(i=0; i<l; i++){
+                    
+                    if(i%4 == 0){
+                        var target_flex= document.createElement("div")
+                        target_flex.className="d-flex course-wrapper-row"
+                        document.querySelector(".course-wrapper").append(target_flex)
+                    }
+                    var target_flex=document.querySelectorAll(".course-wrapper-row")
+                    var len_flex=target_flex.length
+                    var target_row=target_flex[len_flex-1]
+                    if(courses[i].price == null){
+                        courses[i].price="NULL"
+                    }
+                    var course_html=`<div class="course m-3 shadow" data-info="${courses[i].id}">
+                                <div class="course-top">
+                                    <img src="{% static 'img/course-img.png' %}" class="w-100" alt="">
+                                </div>
+                                <div class="course-bottom py-2 px-3">
+                                    <div class="row course-intro">
+                                        <div class="col-9">
+                                            <p>${courses[i].name}</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <strong class="nav-active">${courses[i].price}</strong>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>` 
+                    target_row.innerHTML+=course_html
+            }
+          }
       </script>
 </body>
 </html> 

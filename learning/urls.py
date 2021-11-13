@@ -10,10 +10,12 @@ urlpatterns = [
     path("events/",views.events,name="Events"),
     path("course/",views.course,name="Course"),
     path("course/instructor/",views.instructor,name="instructor"),
-    path("course/overview/",views.overview,name="overview"),
+    # path("course/overview/",views.overview,name="overview"),
     path("events/live/",views.LiveEvents,name="LiveEvents"),
     path("events/live/1/",views.CurrentLiveEvent,name="CurrentLive"),
     path("courses/industry/specific/",views.IndustrySpecificCourses,name="IndustrySpecific"),
     path("event/details/",views.EventDetails,name="EventDetails"),
-    path("enterprise/",views.Enterprise,name="Enterprise")
+    path("enterprise/",views.Enterprise,name="Enterprise"),
+    path("courses/<str:keyword>/",views.GetCourses,name="GetCourses"),
+    path("course/<str:course_id>/",views.overview,name="overview")
 ]

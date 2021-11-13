@@ -1,5 +1,8 @@
-from learning.models import Student
+from django.http.response import JsonResponse
+from learning.models import Course, Student
 from django.shortcuts import redirect, render, HttpResponse
+
+from learning.serializers import CourseSerializer
 # from . import forms
 from .forms import EnterpriseContactForm, ProfileForm,UserForm,ContactForm
 from django.views.decorators.csrf import csrf_exempt
@@ -85,3 +88,8 @@ def Enterprise(request):
         form= EnterpriseContactForm()
         context={"form":form}
         return render(request,"learning/enterprise.html",context)
+
+def GetCourses(request,keyword):
+    courses=Course.objects.filter(category__iexact=keyword)
+    courses=CourseSerializer(courses,many=True).data
+    return JsonResponse({"courses":courses},status=200)

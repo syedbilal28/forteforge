@@ -1,5 +1,6 @@
-from django.forms import ModelForm
-from .models import EnterPriseContact, Student, User,Contact
+from django.forms import ModelForm,CharField,Textarea
+
+from .models import Course, EnterPriseContact, Student, User,Contact
 
 
 # Create the form class.
@@ -50,4 +51,13 @@ class ContactForm(ModelForm):
 class EnterpriseContactForm(ModelForm):
     class Meta:
         model=EnterPriseContact
+        fields="__all__"
+
+class AdminCourseForm(ModelForm):
+    about=CharField(widget=Textarea)
+    why=CharField(widget=Textarea)
+    outline=CharField(widget=Textarea)
+    why_forteforge=CharField(widget=Textarea)
+    class Meta:
+        model=Course
         fields="__all__"
