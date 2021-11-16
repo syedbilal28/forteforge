@@ -781,9 +781,7 @@
           function RemoveActiveClass(){
               $(".course-choice").removeClass("course-active")
           }
-          $(".course").on("click",function(){
-              window.location.href="{% url 'Course' %}"
-          })
+          
           function CallCourses(keyword){
               $.ajax({
                   url:"/courses/"+keyword+"/",
@@ -829,6 +827,11 @@
                             </div>` 
                     target_row.innerHTML+=course_html
             }
+            $(".course").on("click",function(){
+              target_id=this.dataset.info
+              console.log("clicked")
+              window.location.href=`/course/${target_id}/`
+          })
           }
       </script>
 </body>

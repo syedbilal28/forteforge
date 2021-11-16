@@ -39,7 +39,7 @@ class Course(models.Model):
     why_forteforge=models.CharField(max_length=5000,null=True,blank=True)
     category=models.CharField(max_length=256,null=True,blank=True)
     subcategory=models.CharField(max_length=256,null=True,blank=True)
-    price=models.IntegerField(null=True,blank=True)
+    price=models.CharField(max_length=10,default="NIL")
 
     def __str__(self):
         return self.name

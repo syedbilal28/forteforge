@@ -1,7 +1,7 @@
 from django.http.response import JsonResponse
 from learning.models import Course, Student
 from django.shortcuts import redirect, render, HttpResponse
-
+import json
 from learning.serializers import CourseSerializer
 # from . import forms
 from .forms import EnterpriseContactForm, ProfileForm,UserForm,ContactForm
@@ -55,14 +55,17 @@ def signup_enterprise(request):
 def events(request):
     return render(request,"learning/events.html")
 
-def course(request):
-    return render(request,"learning/course.html")
+def course(request,course_id):
+    course=Course.objects.get(pk=int(course_id))
+    context={"course":course}
+    return render(request,"learning/course.html",context)
 
 def instructor(request):
     return render(request,"learning/instructor.html")
 
-def overview(request):
-    return render(request,"learning/overview.html")
+# def overview(request,course_id):
+    
+#     return render(request,"learning/overview.html",context)
 
 def LiveEvents(request):
     return render(request,"learning/live-events.html")
@@ -93,3 +96,16 @@ def GetCourses(request,keyword):
     courses=Course.objects.filter(category__iexact=keyword)
     courses=CourseSerializer(courses,many=True).data
     return JsonResponse({"courses":courses},status=200)
+
+@csrf_exempt
+def AddCourse(request):
+    body=json.loads(request.body)
+    course_name=body.get("name")
+    subcategory=body.get("subcategory")
+    category=body.get("category")
+    course=Course.objects.create(
+        name=course_name,
+        subcategory=subcategory,
+        category=category
+    )
+    return HttpResponse(status=201)

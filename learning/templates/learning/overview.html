@@ -151,6 +151,11 @@
             border-bottom: 1px solid #666;
         }
     </style>
+    <script>
+        $(document).ready(function(){
+            SetLearn(`{{ course.outline }}`)
+        })
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -184,14 +189,14 @@
               <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt="">
             <div class="main-wrapper text-white px-5 py-5 d-flex flex-column justify-content-center">
                 <div class="row w-50 pt-5 py-3 mt-5">
-                <h1 class="fw-bold extra">MICROSOFT PROJECT<br>MASTER COURSE</h1>
+                <h1 class="fw-bold extra">{{ course.name }}</h1>
                 </div>
                 <div class="d-flex flex-row my-5">
                     <div class="mx-2">
                         <button class="btn btn-primary book-btn py-3 px-5"><h3 class="fw-bold m-0">BOOK NOW</h3></button>    
                     </div>
                     <div class="mx-3">
-                        <h3 class="fw-bold py-3">$599</h3>
+                        <h3 class="fw-bold py-3">{{ course.price }}</h3>
                     </div>
                 
                 </div>
@@ -208,7 +213,7 @@
                     <span>>></span><p class="d-inline">Learning & Assessment Event</p>
                 </div>
                 <div class="tree-element mx-3">
-                    <span>>></span><p class="nav-active d-inline">Microsoft Project Master Course</p>
+                    <span>>></span><p class="nav-active d-inline">{{ course.name }}</p>
                 </div>
             </div>
         </div>
@@ -218,7 +223,7 @@
                 <div class="ul-wrapper py-4 px-5">
                     <p class="fw-bold">What you'll learn</p>
                     <ul class="learn-list">
-                        <li>Create EXPERT-LEVEL Project Plans using Microsoft Project with hands-on Project Exercises</li>
+                        <!-- <li>Create EXPERT-LEVEL Project Plans using Microsoft Project with hands-on Project Exercises</li>
                         <li>Manage all your Resources inside Microsoft Project - People, money, machines, licenses or even shared resources</li>
                         <li>Create 100s of world-class, self-updating Graphical Reports - at the click of a button</li>
                         <li>This course would explain the critical software project management framework and concepts through presentation, demonstrations
@@ -228,7 +233,7 @@
                         <li>Apart from Waterfall methodology, its one among the first course to cover Agile and Kanban Methodology through the
                             atest version of MS projects professional built in functionality.</li>
                         <li>Easily understand Critical Path and Eamed value analysis through application</li>
-                        <li>Case study on water fall methodology to understand project concepts/framework and MS project professional easier</li>
+                        <li>Case study on water fall methodology to understand project concepts/framework and MS project professional easier</li> -->
                     </ul>
                 </div>
             </div>
@@ -410,6 +415,17 @@
                 target_div.parentNode.children[0].children[0].children[0].className="fas fa-chevron-down"
               }
           })
+
+          function SetLearn(data){
+              data=data.replaceAll("\n","")
+              data=data.split("-")
+              data.forEach(function(line){
+                  if(line){
+                      line_html=`<li>${line}</li>`
+                      document.querySelector(".learn-list").innerHTML+=line_html
+                  }
+              })
+          }
           
       </script>
 </body>
