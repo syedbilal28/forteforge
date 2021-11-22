@@ -87,6 +87,36 @@
         .enterprise-form-input[data-autocompleted] {
             background-color: transparent !important;
         }
+        .navbar{
+            border-bottom: 5px solid #0231A2;
+        }
+        .logo-bg-left{
+            position: absolute;
+            left: -250px;
+            top: 25px;
+            height: 100% !important;
+            z-index: -1;
+        }
+        .logo-bg-right{
+            position: absolute;
+            right: -150px;
+            top: 150px;
+            height: 100% !important;
+            z-index: -1;
+        }
+        .pink-bg{
+            background-color: #E25051;
+        }
+        .enroll-btn{
+            color: #E25051;
+            border: 1px solid #E25051;
+            background-color: white;
+        }
+        .enroll-btn:hover{
+            background-color: #E25051;
+            color: white;
+            border: 1px solid white;
+        }
     </style>
 </head>
 <body>
@@ -95,25 +125,27 @@
       <div class="container">
           <!-- Top banner -->
           <div class="top-wrapper top-img-container">
-            <img src="{% static 'img/enterprise-bg.png' %}" class="w-100 overlay-1" alt="">
+              <img src="{% static 'img/logo-bg.png' %}" alt="" class="w-500 logo-bg-left">
+              <img src="{% static 'img/logo-bg.png' %}" alt="" class="w-500 logo-bg-right">
+            <!-- <img src="{% static 'img/enterprise-bg.png' %}" class="w-100 overlay-1" alt=""> -->
               <!-- <img src="{% static 'img/Rectangle-black.png' %}" class="w-100 overlay" alt=""> -->
-            <div class="main-wrapper h-100 text-white px-5 py-5 d-flex flex-column justify-content-center">
-                <div class="w-50">
-                <h1 class="fw-bold extra blue-active h2">Managing Competitiveness<br> Can Be Hard.</h1>
-                <h1 class="fw-bold">We Make It Effortless.</h1>
+            <div class="main-wrapper h-100 text-white px-5 py-5 d-flex flex-column justify-content-center align-items-center">
+                <div class="text-wrapper">
+                <h1 class="text-body text-center extra h2">Managing Competitiveness<br> Can Be Hard.<span class="nav-active"> We make It Effortless.</span></h1>
+                
                 </div>
                 
             </div>
         </div>
-        <div class="enterprise-sections p-5">
+        <div class="enterprise-sections p-5 my-5">
             <div class="enterprise-sections-wrapper d-flex justify-content-center align-items-center">
                 <div class="enterprise-section mx-2 d-flex flex-column justify-content-end align-items-end rounded">
                     
                         <img src="{% static 'img/hire-competent.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
                         <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
                     
-                    <div class="blue-active mr-auto ml-auto px-2">
-                        <p class="h5 fw-bold">Hire Competent</p>
+                    <div class="nav-active mr-auto ml-auto px-2">
+                        <p class="h5">Hire Competent</p>
                     </div>
                     <div class="x-small mr-auto ml-auto px-2 text-center">
                         <p class="text-white fw-bold">Forteforge is building the largest middle skill sector community of competent professionals ready to deliver value when you need them.</p>
@@ -126,8 +158,8 @@
                     <img src="{% static 'img/corporate.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
                     <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
                 
-                    <div class="blue-active mr-auto ml-auto px-2">
-                        <p class="h5 fw-bold">Corporate</p>
+                    <div class="nav-active mr-auto ml-auto px-2">
+                        <p class="h5">Corporate</p>
                     </div>
                     <div class="x-small mr-auto ml-auto px-2 text-center">
                         <p class="text-white fw-bold">Forteforge delivers curated corporate training requisitions across knowledge areas connecting business to engineering to assure competitiveness and market leadership</p>
@@ -140,8 +172,8 @@
                     <img src="{% static 'img/project-management.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
                     <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
                 
-                    <div class="blue-active mr-auto ml-auto px-2">
-                        <p class="h5 fw-bold">Project Management</p>
+                    <div class="nav-active mr-auto ml-auto px-2">
+                        <p class="h5">Project Management</p>
                     </div>
                     <div class="x-small mr-auto ml-auto px-2 text-center">
                         <p class="text-white fw-bold">Forteforge is building the largest middle skill sector community of competent professionals ready to deliver value when you need them.</p>
@@ -154,8 +186,8 @@
                     <img src="{% static 'img/research-data-solutions.png' %}" class="w-100 rounded enterprise-overlay-1" alt="">
                     <img src="{% static 'img/half-transparent.png' %}" class="w-100 enterprise-overlay" alt="">
                 
-                    <div class="blue-active mr-auto ml-auto px-2">
-                        <p class="h5 fw-bold">Research & Data Services</p>
+                    <div class="nav-active mr-auto ml-auto px-2">
+                        <p class="h5">Research & Data Services</p>
                     </div>
                     <div class="x-small mr-auto ml-auto px-2 text-center">
                         <p class="text-white fw-bold">Making data sets accurate, easy to digest and actionable. Providing data that facilitates good decision making and application building.
@@ -169,7 +201,7 @@
         </div>
         <div class="what-people-say">
             <img src="{% static 'img/people-say-bg.png' %}" class="w-100 overlay-1 h-auto" alt="">
-            <img src="{% static 'img/Rectangle-blue.png' %}" class="w-100 overlay h-auto" alt="">
+            <img src="{% static 'img/magenta-bg.png' %}" class="w-100 overlay h-auto" alt="">
             <div class="what-people-say-wrapper p-5">
                 <div class="row text-center my-3">
                     <h2 class="fw-bold text-white">What People Say</h2>
@@ -183,7 +215,7 @@
                             <p class="h6">Jack White</p>
                         </div>
                         <div class="row mb-2">
-                            <p class="x-small fw-bold">Many Agile Project Management services are quite generalistic, and are not unique in application. Forteforge was several notches higher</p>
+                            <p class="x-small fw-bold text-center">Many Agile Project Management services are quite generalistic, and are not unique in application. Forteforge was several notches higher</p>
                         </div>
                     </div>
                     <div class="mx-3 p-3 people-say rounded bg-white d-flex flex-column justify-content-center align-items-center">
@@ -194,7 +226,7 @@
                             <p class="h6">Damy Alade</p>
                         </div>
                         <div class="row mb-2">
-                            <p class="x-small fw-bold">This was fantastic and detailed
+                            <p class="x-small fw-bold text-center">This was fantastic and detailed
                                 applying Agile Project Management in hybrid, to  the services industry.</p>
                         </div>
                     </div>
@@ -206,18 +238,18 @@
                             <p class="h6">Bisi Okuneye</p>
                         </div>
                         <div class="row mb-2">
-                            <p class="x-small fw-bold">The curated course designed for our company was taught by Justus, who demonstrated  why he is definitely one of the best. It was of immense business value. </p>
+                            <p class="x-small fw-bold text-center">The curated course designed for our company was taught by Justus, who demonstrated  why he is definitely one of the best. It was of immense business value. </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="team-effective p-5 text-center mt-5">
-            <h2>Ready To Make <span class="blue-active">Your Team</span> More Effective?</h2>
+            <h2>Ready To Make <span class="nav-active">Your Team</span> More Effective?</h2>
         </div>
-        <div class="contact-enterprise p-5 blue-bg">
-            <div class="contact-enterprise-wrapper d-flex flex-column justify-content-center align-items-center">
-                <div class="my-2 light-blue">
+        <div class="contact-enterprise p-5 pink-bg h-100">
+            <div class="contact-enterprise-wrapper py-5 d-flex flex-column justify-content-center align-items-center">
+                <div class="my-2 text-white">
                     <h1>CONTACT US</h1>
                 </div>
                 <div class="form-wrapper">
@@ -237,7 +269,7 @@
                                 {{ form.phone }}
                             </div>
                             <div class="row my-5">
-                                <button class="btn btn-primary form-control py-2" type="submit">Enroll</button>
+                                <button class="btn btn-primary form-control py-2 enroll-btn" type="submit">Enroll</button>
                             </div>
                             <div class="row my-5">
                                 <p class="x-small fw-bold text-white">By registering and clicking”ENROLL”, you agree to our  Terms of Use, Privacy policy and Cookie Policy</p>
