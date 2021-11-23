@@ -109,3 +109,6 @@ def AddCourse(request):
         category=category
     )
     return HttpResponse(status=201)
+
+def partners(request):
+    return render(request,"learning/partners.html")

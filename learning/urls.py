@@ -19,5 +19,6 @@ urlpatterns = [
     path("enterprise/",views.Enterprise,name="Enterprise"),
     path("courses/<str:keyword>/",views.GetCourses,name="GetCourses"),
     # path("course/<str:course_id>/",views.overview,name="overview"),
-    path("add/course/",csrf_exempt(views.AddCourse),name="AddCourse")
+    path("add/course/",csrf_exempt(views.AddCourse),name="AddCourse"),
+    path("partners/",views.partners,name="Partners")
 ]

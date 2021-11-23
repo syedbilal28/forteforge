@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'learning/links.html' %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Partners | ForteForge</title>
+    <style>
+        @font-face {
+            font-family: Gilroy;
+            src: url('/static/fonts/Gilroy-Regular.ttf');
+        }
+        /* .container{margin: auto !important;} */
+        .get-started{
+            background-color: #FF5656;
+            color: white;
+            border: 1px solid #FF5656;
+        }
+        .get-started:hover{
+            color: #FF5656;
+            background-color: white;
+            transition: 0.2s;
+            border: 1px solid #FF5656;
+
+        }
+        .top,.opportunities{
+            font-family: Gilroy;
+            min-width: 100vw;
+        }
+        .top{
+            min-height: 600px;
+            min-width: 100vw;
+            /* min-width: 100vw; */
+        }
+        .top>div{
+            min-height: 600px;
+        }
+        .top>div>div{
+            min-height: 600px;
+        }
+        .overlay-1-partner{
+            position: absolute;
+            z-index: -2;
+            
+        }
+        .overlay-partner{
+            position: absolute;
+            z-index: -1;
+        }
+        .blue-text{
+            color: #38505D;
+        }
+        .opportunity{
+            background-color: #38505D;
+        }
+        .bit-large{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'learning/header.html' %}
+    <div class="container">
+        <div class="top p-5">
+            <div class="row">
+                <div class="col">
+                    <div class="partner-banner-wrapper p-5 d-flex flex-column justify-content-center h-100">
+                        <div class="heading-wrapper my-2">
+                            <h1>Become a <span class="nav-active d-block">ForteForge Partner</span></h1>
+                        </div>
+                        <div class="text-wrapper my-2">
+                            <p class="text-dark">We partner with Technical Institutes, Educators, Professional Bodies, 
+                                Skill Assessment Companies and Enterprises around the world, to 
+                                facilitate the triage guaranteeing the competitiveness of economies 
+                                everywhere.</p>
+                        </div>
+                        <div class="btn-wrapper my-2">
+                            <button class="btn btn-primary get-started">Get Started</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="banner-img-wrapper p-5 h-100">
+                        <img src="{% static 'img/partners.png' %}" class="rounded w-75 overlay-1-partner" alt="">
+                        <img src="{% static 'img/black-square-bg.png' %}" class="rounded w-75 overlay-partner" alt="">
+                    </div>
+                </div>
+            </div>    
+        </div>
+        <div class="opportunities my-5 p-5">
+            <div class="opportunities-wrapper">
+                <h2 class="blue-text">Partnership Opportunities</h2>
+                <div class="opportunities-holder d-flex flex-column py-2">
+                    <div class="opportunity text-white px-5 py-3 rounded mb-4">
+                        <div class="row">
+                            <p class="bit-large">LEARNING INSTITUTES</p>
+                        </div>
+                        <div class="row">
+                            <p class="x-small">Partnering with the world’s leading technical Institutes to guarantee industry valued learning in real time</p>
+                        </div>
+                    </div>
+                    <div class="opportunity text-white px-5 py-3 rounded mb-4">
+                        <div class="row">
+                            <p class="bit-large">EDUCATORS</p>
+                        </div>
+                        <div class="row">
+                            <p class="x-small">Forteforge is the place where high quality educators become rockstars!!. We ensure educators are exposed to CPD 
+                                and competence enhancing opportunities while they’re matched to learners and institutions best suited for their style of teaching. </p>
+                        </div>
+                    </div>
+                    <div class="opportunity text-white px-5 py-3 rounded mb-4">
+                        <div class="row">
+                            <p class="bit-large">CERTIFYING BODIES & SKILLS ASSESSMENT PARTNERS</p>
+                        </div>
+                        <div class="row">
+                            <p class="x-small">Getting more professionals and students around the world to take assessment exams, attend CPD events, connect with assessors</p>
+                        </div>
+                    </div>
+                    <div class="opportunity text-white px-5 py-3 rounded mb-4">
+                        <div class="row">
+                            <p class="bit-large">PRODUCT PARTNERS</p>
+                        </div>
+                        <div class="row">
+                            <p class="x-small">Forteforge is your best bet when seeking competent partners who care about you product, provide Go-Live and Ops support solutions, 
+                                at end user touch points, transforming the way your client enterprises succeed and meet their strategic objectives. </p>
+                        </div>
+                    </div>
+                    <div class="opportunity text-white px-5 py-3 rounded mb-4">
+                        <div class="row">
+                            <p class="bit-large">SERVICE PARTNERS</p>
+                        </div>
+                        <div class="row">
+                            <p class="x-small">Forteforge delivers services that aim to solve teething problems in workstreams across siloes. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="partner-forteforge p-5 my-5">
+            <div class="partner-forteforge-wrapper">
+                <h2 class="blue-text">Why Partner With ForteForge</h2>
+            </div>     
+        </div>
+    </div>
+</body>
+</html>
