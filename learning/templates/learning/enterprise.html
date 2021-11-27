@@ -60,6 +60,9 @@
         .blue-bg{
             background-color: #0231A2;
         }
+        .nav-active-blue{
+            color: #0231A2 !important;
+        }
         .form-content-wrapper{
             min-width: 400px;
         }
@@ -88,7 +91,7 @@
             background-color: transparent !important;
         }
         .navbar{
-            border-bottom: 5px solid #0231A2;
+            border-bottom: 4px solid #0231A2;
         }
         .logo-bg-left{
             position: absolute;
@@ -283,6 +286,9 @@
       {% include 'learning/footer.html' %}
      
       <script>
+           $(".nav-link").removeClass("nav-active");
+            $(document.querySelectorAll(".nav-link")[2]).addClass("nav-active-blue");
+
           $("#id_first_name").addClass("form-control enterprise-form-input")
           document.querySelector("#id_first_name").placeholder="First Name"
           $("#id_last_name").addClass("form-control enterprise-form-input")

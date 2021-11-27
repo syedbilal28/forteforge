@@ -773,6 +773,9 @@
       </div>
       {% include "learning/footer.html" %}
       <script>
+           $(".nav-link").removeClass("nav-active");
+            $(document.querySelectorAll(".nav-link")[1]).addClass("nav-active");
+
           $(".course-choice").on("click",function(){
             RemoveActiveClass()
             $(this).addClass("course-active")

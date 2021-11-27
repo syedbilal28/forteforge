@@ -26,7 +26,7 @@
             border: 1px solid #FF5656;
 
         }
-        .top,.opportunities{
+        .top,.opportunities,.partner-forteforge{
             font-family: Gilroy;
             min-width: 100vw;
         }
@@ -58,6 +58,23 @@
         }
         .bit-large{
             font-size: 20px;
+        }
+        .why-partner-img{
+            position: absolute;
+            max-width: 400px;
+            max-height: 320px;
+        }
+        .partner-reason{
+            min-width:400px;
+            min-height: 320px;
+            max-width: 400px;
+            position: relative;
+        }
+        .position-1{
+            z-index: -2;
+        }
+        .position-2{
+            z-index: -1;
         }
     </style>
 </head>
@@ -141,10 +158,90 @@
             
         </div>
         <div class="partner-forteforge p-5 my-5">
-            <div class="partner-forteforge-wrapper">
-                <h2 class="blue-text">Why Partner With ForteForge</h2>
+            <div class="partner-forteforge-wrapper my-5">
+                <h2 class="blue-text pl-3">Why Partner With ForteForge</h2>
             </div>     
+            <div class="d-flex m-auto mt-5">
+                <div class="partner-reason m-3 rounded text-white">
+                    <img src="{% static 'img/partner-why-1.png' %}" class="w-100 why-partner-img rounded position-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 why-partner-img rounded position-2" alt="">
+                    <div class="text-wrapper text-center h-100 p-5">
+                        <div class="text-heading">
+                            <p class="h5">Global Reach</p>
+                        </div>
+                        <div class="body-text h-100">
+                            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <div>
+                                    <p>Providing much needed market expansion need in target and emerging markets. Our team and network team of solution specialists, locally and globally, engage to deliver real value by being implementing partners per excellence. We are able to tailor fit solutions to middle skill sector needs, improving them to deliver internal, as well as far reaching micro and macro-economic benefits. </p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="partner-reason m-3 rounded text-white">
+                    <img src="{% static 'img/partner-why-2.png' %}" class="w-100 why-partner-img rounded position-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 why-partner-img rounded position-2" alt="">
+                    <div class="text-wrapper text-center h-100 p-5">
+                        <div class="text-heading">
+                            <p class="h5">Partner Success</p>
+                        </div>
+                        <div class="body-text h-100">
+                            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <div class="m-auto">
+                                    <p>Providing support and feedback where solutions can be made delightful for the end user, improving outcomes for both end users and partner enterprises.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="partner-reason m-3 rounded text-white">
+                    <img src="{% static 'img/partner-why-3.png' %}" class="w-100 why-partner-img rounded position-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 why-partner-img rounded position-2" alt="">
+                    <div class="text-wrapper text-center h-100 p-5">
+                        <div class="text-heading">
+                            <p class="h5">Lean Excellence</p>
+                        </div>
+                        <div class="body-text h-100">
+                            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <div>
+                                    <p>Our clients leverage packaged access to high quality solutions that help keep operations efficient, measures effective, and outcomes meeting and exceeding positive expectations as they deliver high value products and services to their customers.   </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <div class="d-flex m-auto">
+                <div class="partner-reason m-3 rounded text-white">
+                    <img src="{% static 'img/partner-why-3.png' %}" class="w-100 why-partner-img rounded position-1" alt="">
+                    <img src="{% static 'img/half-transparent.png' %}" class="w-100 why-partner-img rounded position-2" alt="">
+                    <div class="text-wrapper text-center h-100 p-5">
+                        <div class="text-heading">
+                            <p class="h5">HCI Growth Focus</p>
+                        </div>
+                        <div class="body-text h-100">
+                            <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <div>
+                                    <p>Forteforge has a drilled down vision on bridging middle skill sector gaps end to end by leveraging transformative implementations. This entails building high quality people, processes, and leveraging high grade technology for every system. Results delivered help our clients meet their strategic objectives, while improving the HCI of their local economies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    {% include 'learning/footer.html' %}
+    <script>
+        $(".nav-link").removeClass("nav-active");
+        $(document.querySelectorAll(".nav-link")[3]).addClass("nav-active");
+
+    </script>
 </body>
 </html>
